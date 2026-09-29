@@ -211,25 +211,11 @@ To see the real-time queue in action:
 
 ---
 
-## 👨‍💻 Developer & Author
+## 👨‍💻 Author & Credits
 
-<div align="center">
-
-### **Srinivas VM**
-🎓 *Second Year BCA Student | Full-Stack & AI/ML Enthusiast*
-
-[![GitHub](https://img.shields.io/badge/GitHub-srinivasvm1122--web-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/srinivasvm1122-web)
-[![Email](https://img.shields.io/badge/Email-srinivasvm1122%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:srinivasvm1122@gmail.com)
-[![Status](https://img.shields.io/badge/Focus-Full--Stack%20%7C%20Python%20%7C%20AI%2FML-blueviolet?style=for-the-badge)](https://github.com/srinivasvm1122-web)
-
-</div>
-
-- 🎓 **Education:** Second year BCA student
-- 💻 **Learning Journey:** Currently mastering Full-Stack Development, Python & AI/ML
-- 🤖 **Interests:** Machine Learning, Deep Learning, and building high-performance web applications
-- 📈 **Daily Focus:** Solving real-world problems and improving programming skills daily
-- 📁 **GitHub Portfolio:** [@srinivasvm1122-web](https://github.com/srinivasvm1122-web) — sharing open-source projects, code, and continuous learning
-- 📬 **Get in touch:** Feel free to connect via [Email](mailto:srinivasvm1122@gmail.com) or explore my other repositories!
+- **Developer:** Srinivas V. M.
+- **GitHub:** [@srinivasvm1122-web](https://github.com/srinivasvm1122-web)
+- **Email:** srinivasvm1122@gmail.com
 
 ---
 
