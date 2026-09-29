@@ -1,0 +1,8 @@
+{
+  "name": "VIMTECH Canteen Center",
+  "description": "Vaisiri Institute of Management and Technology Smart College Canteen Management System - Order Smart, Skip the Queue",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

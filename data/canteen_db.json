@@ -1,0 +1,1581 @@
+{
+  "users": [
+    {
+      "_id": "usr_op_001",
+      "name": "VIMTECH Canteen Operator",
+      "studentId": "STAFF-VIM-01",
+      "email": "operator@vimtech.edu",
+      "password": "$2b$10$Cn78iIL01/kH21i3sRchh.jkwpPHAdGhNBHU62oNAUeiXOvwN/S2y",
+      "phone": "+91 98450 12345",
+      "course": "Administration",
+      "year": "Staff",
+      "studentType": "Degree",
+      "role": "operator",
+      "createdAt": "2026-09-24T15:52:44.322Z"
+    },
+    {
+      "_id": "usr_std_001",
+      "name": "Rahul Gowda",
+      "studentId": "VIM2024BCA104",
+      "email": "rahul@vimtech.edu",
+      "password": "$2b$10$SRNlK15SBmXbig.J6k7ITuOAgKVH0.INEdvG4VBj1u7b6zl9TkdNO",
+      "phone": "+91 99012 34567",
+      "course": "BCA (Bachelor of Computer Applications)",
+      "year": "3rd Year",
+      "studentType": "Degree",
+      "role": "student",
+      "createdAt": "2026-09-24T15:52:44.322Z"
+    },
+    {
+      "_id": "usr_std_002",
+      "name": "Priya Sharma",
+      "studentId": "VIM2025MCA018",
+      "email": "priya@vimtech.edu",
+      "password": "$2b$10$SRNlK15SBmXbig.J6k7ITuOAgKVH0.INEdvG4VBj1u7b6zl9TkdNO",
+      "phone": "+91 98860 54321",
+      "course": "MCA (Master of Computer Applications)",
+      "year": "1st Year",
+      "studentType": "Master's",
+      "role": "student",
+      "createdAt": "2026-09-24T15:52:44.322Z"
+    },
+    {
+      "_id": "usr_1790266648194zjcg",
+      "name": "Srinivas V M",
+      "studentId": "U11YB225S0031",
+      "email": "srinivasvm1122@gmail.com",
+      "password": "$2b$10$e80qzCJs6Y33YKiTbqcYn.LIZv4npFg7gBsWl72.5IWK3v7nTExZW",
+      "phone": "6360142549",
+      "course": "BCA",
+      "year": "3rd Year",
+      "studentType": "Degree",
+      "role": "operator",
+      "academicCategory": null,
+      "department": null,
+      "semester": null,
+      "section": null,
+      "hostelBuilding": null,
+      "roomNumber": null,
+      "branchId": null,
+      "createdAt": "2026-09-28T16:15:11.554Z"
+    },
+    {
+      "_id": "usr_op_vaasu",
+      "name": "Srinivas (Vaasu)",
+      "studentId": "STAFF-VIM-02",
+      "email": "vaasu1122@gmail.com",
+      "password": "$2b$10$e80qzCJs6Y33YKiTbqcYn.LIZv4npFg7gBsWl72.5IWK3v7nTExZW",
+      "phone": "+91 81052 20000",
+      "course": "Canteen Administration",
+      "year": "Staff",
+      "studentType": "Degree",
+      "role": "operator",
+      "createdAt": "2026-09-24T16:24:52.230Z"
+    },
+    {
+      "name": "Nithin",
+      "studentId": "U11YB25SOO33",
+      "email": "bknithin33@gmail.com",
+      "password": "$2b$10$ibL1PqQgr0Ri4RcgyhaIM..j1pn/1aAERkBvnIzBOwikktQ4XO8IK",
+      "phone": "63664848",
+      "course": "BCA",
+      "year": "3rd Year",
+      "studentType": "Degree",
+      "role": "student",
+      "_id": "usr_17902675473942x64",
+      "createdAt": "2026-09-24T16:32:27.394Z"
+    },
+    {
+      "_id": "usr_std_001_alias",
+      "name": "Rahul Gowda",
+      "studentId": "CAM2024BCA104",
+      "email": "rahul@campus.edu",
+      "password": "$2b$10$SRNlK15SBmXbig.J6k7ITuOAgKVH0.INEdvG4VBj1u7b6zl9TkdNO",
+      "phone": "+91 99012 34567",
+      "course": "BCA (Bachelor of Computer Applications)",
+      "year": "3rd Year",
+      "studentType": "Degree",
+      "role": "student",
+      "academicCategory": null,
+      "department": null,
+      "semester": null,
+      "section": null,
+      "hostelBuilding": null,
+      "roomNumber": null,
+      "branchId": null,
+      "createdAt": "2026-09-28T16:15:12.019Z"
+    },
+    {
+      "_id": "usr_std_002_alias",
+      "name": "Priya Sharma",
+      "studentId": "CAM2025MCA018",
+      "email": "priya@campus.edu",
+      "password": "$2b$10$SRNlK15SBmXbig.J6k7ITuOAgKVH0.INEdvG4VBj1u7b6zl9TkdNO",
+      "phone": "+91 98860 54321",
+      "course": "MCA (Master of Computer Applications)",
+      "year": "1st Year",
+      "studentType": "Master's",
+      "role": "student",
+      "createdAt": "2026-09-24T15:52:44.322Z"
+    },
+    {
+      "name": "Srinivas V M",
+      "studentId": "VUM5897",
+      "email": "srinsvm1122@gmail.com",
+      "password": "$2b$10$lDkv8j.POhmKW51rzkFCdeWbUVp23r1GqksBfwlzgrXgvZEEstnhW",
+      "phone": "5787879875",
+      "course": "BCA",
+      "year": "3rd Year",
+      "studentType": "Degree",
+      "role": "student",
+      "_id": "usr_17906115738609ldo",
+      "createdAt": "2026-09-28T16:06:13.860Z"
+    },
+    {
+      "name": "Ravi Kumar",
+      "studentId": "CAM2026TECH99",
+      "email": "teststudent_1790612101248@campus.edu",
+      "password": "$2b$10$Bi.owOHIBGpC/O8oVqxs/.fG2sYcsvcBw1rz3AaVhvvL/QU6d.5bO",
+      "phone": "9845112233",
+      "course": "B.Tech Artificial Intelligence",
+      "year": "2nd Year",
+      "studentType": "Degree",
+      "role": "student",
+      "_id": "usr_1790612102125i5tb",
+      "createdAt": "2026-09-28T16:15:02.125Z"
+    },
+    {
+      "_id": "usr_admin_001",
+      "name": "Campus Canteen Administrator",
+      "studentId": "ADMIN-01",
+      "email": "admin@campus.edu",
+      "password": "$2b$10$RvyrhYAoQeQuRH/BYoEMy.i1ynaGb4R7qqgdoIhljJV.K3qKdcX8W",
+      "phone": "+91 99000 11223",
+      "course": "Management",
+      "year": "Admin",
+      "studentType": "Degree",
+      "role": "admin",
+      "academicCategory": null,
+      "department": null,
+      "semester": null,
+      "section": null,
+      "hostelBuilding": null,
+      "roomNumber": null,
+      "branchId": null,
+      "createdAt": "2026-09-28T16:30:53.492Z"
+    },
+    {
+      "_id": "usr_kitchen_001",
+      "name": "Head Chef & Kitchen Lead",
+      "studentId": "KITCHEN-01",
+      "email": "kitchen@campus.edu",
+      "password": "$2b$10$0eRTOwVr6EHrudgMVAMTxOkKyVmVQEjdy8zvP/Nrp1sD9FN9u.mgm",
+      "phone": "+91 98450 77889",
+      "course": "Food Production",
+      "year": "Staff",
+      "studentType": "Degree",
+      "role": "kitchen",
+      "academicCategory": null,
+      "department": null,
+      "semester": null,
+      "section": null,
+      "hostelBuilding": null,
+      "roomNumber": null,
+      "branchId": null,
+      "createdAt": "2026-09-28T16:30:53.655Z"
+    },
+    {
+      "_id": "usr_delivery_001",
+      "name": "Campus Room Delivery Partner",
+      "studentId": "DELIVERY-01",
+      "email": "delivery@campus.edu",
+      "password": "$2b$10$hNbTYMRju1p572Wo9xPlF.MXE33QkOaNgSeFwAbgnhLB1.6.g1ENS",
+      "phone": "+91 97410 44556",
+      "course": "Logistics",
+      "year": "Staff",
+      "studentType": "Degree",
+      "role": "delivery",
+      "academicCategory": null,
+      "department": null,
+      "semester": null,
+      "section": null,
+      "hostelBuilding": null,
+      "roomNumber": null,
+      "branchId": null,
+      "createdAt": "2026-09-28T16:30:53.821Z"
+    },
+    {
+      "_id": "usr_mgr_001",
+      "name": "Hostel Canteen Branch Manager",
+      "studentId": "MGR-02",
+      "email": "manager@campus.edu",
+      "password": "$2b$10$rucIQuPi3CJ/XQWBJdGEi.PauusckS8zVwnBQb08suOvjn84Y4aKG",
+      "phone": "+91 96110 33221",
+      "course": "Branch Operations",
+      "year": "Staff",
+      "studentType": "Degree",
+      "role": "branch_manager",
+      "academicCategory": null,
+      "department": null,
+      "semester": null,
+      "section": null,
+      "hostelBuilding": null,
+      "roomNumber": null,
+      "branchId": null,
+      "createdAt": "2026-09-28T16:30:53.985Z"
+    },
+    {
+      "name": "Srinivas V M",
+      "studentId": "VSGDVSGH",
+      "email": "srinasvm1122@gmail.com",
+      "password": "$2b$10$rw0lQMT4SxzE5lpQYsOOEumkEbc3tgdkCeVp5oojrgyzMk641SApG",
+      "phone": "54687897",
+      "course": "BCA",
+      "year": "3rd Year",
+      "studentType": "Degree",
+      "academicCategory": "BCA",
+      "department": "General",
+      "semester": "1st Semester",
+      "section": "A",
+      "hostelBuilding": "",
+      "roomNumber": "",
+      "role": "student",
+      "_id": "usr_17906952438213jf2",
+      "createdAt": "2026-09-29T15:20:43.821Z"
+    }
+  ],
+  "menuItems": [
+    {
+      "_id": "menu_104",
+      "name": "Sambar Rice",
+      "description": "Homestyle aromatic South Indian rice dish flavored with drumsticks, shallots, tamarind, and fresh coriander.",
+      "price": 35,
+      "image": "/images/sambar_rice.jpg",
+      "category": "Meals",
+      "available": true,
+      "isTodaySpecial": false,
+      "date": "2026-09-26",
+      "stockQuantity": 50,
+      "preparationTimeMinutes": 10,
+      "isVeg": true,
+      "branchAvailability": [
+        "Main Canteen",
+        "Hostel Canteen",
+        "Block B Canteen"
+      ],
+      "ingredients": null,
+      "allergyInfo": null,
+      "createdAt": "2026-09-26T07:15:20.407Z"
+    },
+    {
+      "_id": "menu_105",
+      "name": "Curd Rice",
+      "description": "Cooling seasoned yogurt rice tempered with mustard seeds, curry leaves, ginger, and green chilies.",
+      "price": 30,
+      "image": "/images/curd_rice.jpg",
+      "category": "Meals",
+      "available": true,
+      "isTodaySpecial": false,
+      "date": "2026-09-26",
+      "stockQuantity": 50,
+      "preparationTimeMinutes": 10,
+      "isVeg": true,
+      "branchAvailability": [
+        "Main Canteen",
+        "Hostel Canteen",
+        "Block B Canteen"
+      ],
+      "ingredients": null,
+      "allergyInfo": null,
+      "createdAt": "2026-09-26T07:15:20.407Z"
+    },
+    {
+      "_id": "menu_106",
+      "name": "Lemon Rice",
+      "description": "Tangy and crunchy turmeric rice tossed with roasted peanuts, curry leaves, and fresh lime juice.",
+      "price": 35,
+      "image": "/images/lemon_rice.jpg",
+      "category": "Meals",
+      "available": true,
+      "isTodaySpecial": false,
+      "date": "2026-09-26",
+      "stockQuantity": 50,
+      "preparationTimeMinutes": 10,
+      "isVeg": true,
+      "branchAvailability": [
+        "Main Canteen",
+        "Hostel Canteen",
+        "Block B Canteen"
+      ],
+      "ingredients": null,
+      "allergyInfo": null,
+      "createdAt": "2026-09-26T07:15:20.407Z"
+    },
+    {
+      "_id": "menu_107",
+      "name": "Filter Coffee",
+      "description": "Traditional South Indian filter coffee brewed with chicory and frothy hot milk in stainless steel tumbler.",
+      "price": 20,
+      "image": "/images/filter_coffee.jpg",
+      "category": "Beverages",
+      "available": true,
+      "isTodaySpecial": false,
+      "date": "2026-09-26",
+      "stockQuantity": 50,
+      "preparationTimeMinutes": 10,
+      "isVeg": true,
+      "branchAvailability": [
+        "Main Canteen",
+        "Hostel Canteen",
+        "Block B Canteen"
+      ],
+      "ingredients": null,
+      "allergyInfo": null,
+      "createdAt": "2026-09-26T07:15:20.407Z"
+    },
+    {
+      "_id": "menu_110_ameq",
+      "name": "Tea (Masala Chai)",
+      "description": "Cardamom and ginger infused steaming hot college canteen style milk tea.",
+      "price": 15,
+      "image": "/images/masala_chai.jpg",
+      "category": "Beverages",
+      "available": true,
+      "isTodaySpecial": false,
+      "date": "2026-09-26",
+      "stockQuantity": 50,
+      "preparationTimeMinutes": 10,
+      "isVeg": true,
+      "branchAvailability": [
+        "Main Canteen",
+        "Hostel Canteen",
+        "Block B Canteen"
+      ],
+      "ingredients": null,
+      "allergyInfo": null,
+      "createdAt": "2026-09-26T07:15:20.407Z"
+    },
+    {
+      "_id": "menu_101_b2yn",
+      "name": "Masala Dosa",
+      "description": "Crispy golden fermented crepe stuffed with spiced potato palya and served with coconut chutney & sambar.",
+      "price": 50,
+      "image": "/images/masala_dosa.jpg",
+      "category": "Breakfast",
+      "available": true,
+      "isTodaySpecial": true,
+      "date": "2026-09-26",
+      "stockQuantity": 50,
+      "preparationTimeMinutes": 10,
+      "isVeg": true,
+      "branchAvailability": [
+        "Main Canteen",
+        "Hostel Canteen",
+        "Block B Canteen"
+      ],
+      "ingredients": null,
+      "allergyInfo": null,
+      "createdAt": "2026-09-26T07:15:20.407Z"
+    },
+    {
+      "_id": "menu_101",
+      "name": "Bisibele Bath",
+      "description": "Authentic Karnataka spiced rice cooked with lentils, mixed vegetables, and pure ghee.",
+      "price": 40,
+      "image": "/images/bisibele_bath.jpg",
+      "category": "Meals",
+      "available": true,
+      "isTodaySpecial": true,
+      "date": "2026-09-26",
+      "stockQuantity": 50,
+      "preparationTimeMinutes": 10,
+      "isVeg": true,
+      "branchAvailability": [
+        "Main Canteen",
+        "Hostel Canteen",
+        "Block B Canteen"
+      ],
+      "ingredients": null,
+      "allergyInfo": null,
+      "createdAt": "2026-09-26T07:15:20.407Z"
+    },
+    {
+      "_id": "menu_103",
+      "name": "Idli (2 Pcs)",
+      "description": "Steaming hot, fluffy rice cakes accompanied by freshly ground coconut chutney and piping hot sambar.",
+      "price": 30,
+      "image": "/images/idli.jpg",
+      "category": "Breakfast",
+      "available": true,
+      "isTodaySpecial": false,
+      "date": "2026-09-26",
+      "stockQuantity": 50,
+      "preparationTimeMinutes": 10,
+      "isVeg": true,
+      "branchAvailability": [
+        "Main Canteen",
+        "Hostel Canteen",
+        "Block B Canteen"
+      ],
+      "ingredients": null,
+      "allergyInfo": null,
+      "createdAt": "2026-09-26T07:15:20.407Z"
+    },
+    {
+      "_id": "menu_103_tf5c",
+      "name": "Medu Vada (1 Pc)",
+      "description": "Crispy fried lentil donut with crunchy exterior and soft fluffy interior served with chutney.",
+      "price": 20,
+      "image": "/images/medu_vada.jpg",
+      "category": "Breakfast",
+      "available": true,
+      "isTodaySpecial": false,
+      "date": "2026-09-26",
+      "stockQuantity": 50,
+      "preparationTimeMinutes": 10,
+      "isVeg": true,
+      "branchAvailability": [
+        "Main Canteen",
+        "Hostel Canteen",
+        "Block B Canteen"
+      ],
+      "ingredients": null,
+      "allergyInfo": null,
+      "createdAt": "2026-09-26T07:15:20.407Z"
+    },
+    {
+      "_id": "menu_104_4mha",
+      "name": "Poori Sagu",
+      "description": "Two fluffy puffed wheat pooris served with flavorful spiced mixed vegetable sagu.",
+      "price": 45,
+      "image": "/images/poori_sagu.jpg",
+      "category": "Breakfast",
+      "available": true,
+      "isTodaySpecial": false,
+      "date": "2026-09-26",
+      "stockQuantity": 50,
+      "preparationTimeMinutes": 10,
+      "isVeg": true,
+      "branchAvailability": [
+        "Main Canteen",
+        "Hostel Canteen",
+        "Block B Canteen"
+      ],
+      "ingredients": null,
+      "allergyInfo": null,
+      "createdAt": "2026-09-26T07:15:20.407Z"
+    },
+    {
+      "name": "Special South Indian Meals Thali",
+      "description": "Grand campus thali with steamed rice, sambar, rasam, kootu, 2 chapatis, vegetable palya, papad, curd and payasam sweet.",
+      "price": 75,
+      "image": "/images/special_meals_thali.jpg",
+      "category": "Meals",
+      "available": true,
+      "isTodaySpecial": true,
+      "date": "2026-09-29",
+      "_id": "menu_111",
+      "createdAt": "2026-09-29T15:17:42.498Z"
+    },
+    {
+      "name": "Royal Veg Dum Biryani",
+      "description": "Aromatic basmati rice cooked with garden-fresh vegetables, saffron, mint and cashews, served with cucumber raita.",
+      "price": 70,
+      "image": "/images/veg_biryani.jpg",
+      "category": "Lunch",
+      "available": true,
+      "isTodaySpecial": true,
+      "date": "2026-09-29",
+      "_id": "menu_112",
+      "createdAt": "2026-09-29T15:17:42.498Z"
+    },
+    {
+      "name": "Crispy Samosa Plate (2 Pcs)",
+      "description": "Golden Punjabi samosas stuffed with spiced potatoes & peas, served with tangy tamarind and fresh mint chutneys.",
+      "price": 25,
+      "image": "/images/samosa.jpg",
+      "category": "Snacks",
+      "available": true,
+      "isTodaySpecial": false,
+      "date": "2026-09-29",
+      "_id": "menu_113",
+      "createdAt": "2026-09-29T15:17:42.498Z"
+    },
+    {
+      "name": "Veg Cheese Grilled Sandwich",
+      "description": "Crisp golden toasted bread loaded with melted cheddar cheese, diced bell peppers, onion, tomatoes and herbs.",
+      "price": 50,
+      "image": "/images/cheese_sandwich.jpg",
+      "category": "Fast Food",
+      "available": true,
+      "isTodaySpecial": false,
+      "date": "2026-09-29",
+      "_id": "menu_114",
+      "createdAt": "2026-09-29T15:17:42.498Z"
+    },
+    {
+      "name": "Crispy Gobi Manchurian",
+      "description": "Crunchy battered cauliflower florets tossed with garlic, ginger, spring onions in spicy Indo-Chinese dark sauce.",
+      "price": 60,
+      "image": "/images/gobi_manchurian.jpg",
+      "category": "Fast Food",
+      "available": true,
+      "isTodaySpecial": false,
+      "date": "2026-09-29",
+      "_id": "menu_115",
+      "createdAt": "2026-09-29T15:17:42.498Z"
+    },
+    {
+      "name": "Thick Cold Coffee with Ice Cream",
+      "description": "Creamy frothy blended espresso cold coffee served with chocolate drizzle and a scoop of vanilla ice cream.",
+      "price": 40,
+      "image": "/images/cold_coffee.jpg",
+      "category": "Beverages",
+      "available": true,
+      "isTodaySpecial": false,
+      "date": "2026-09-29",
+      "_id": "menu_116",
+      "createdAt": "2026-09-29T15:17:42.498Z"
+    },
+    {
+      "name": "Gulab Jamun (2 Pcs)",
+      "description": "Soft melt-in-mouth cottage cheese dumplings soaked in fragrant cardamom & saffron sugar syrup with pistachio garnish.",
+      "price": 30,
+      "image": "/images/gulab_jamun.jpg",
+      "category": "Desserts",
+      "available": true,
+      "isTodaySpecial": false,
+      "date": "2026-09-29",
+      "_id": "menu_117",
+      "createdAt": "2026-09-29T15:17:42.498Z"
+    },
+    {
+      "name": "Chapati with Veg Kurma (3 Pcs)",
+      "description": "Tawa-roasted soft wheat chapatis served with mildly spiced rich coconut and mixed vegetable kurma.",
+      "price": 40,
+      "image": "/images/poori_sagu.jpg",
+      "category": "Meals",
+      "available": true,
+      "isTodaySpecial": false,
+      "date": "2026-09-29",
+      "_id": "menu_118",
+      "createdAt": "2026-09-29T15:17:42.498Z"
+    },
+    {
+      "name": "Sprouts & Sweet Corn Salad Bowl",
+      "description": "Nutritious steamed sprouted green gram and American sweet corn tossed with lemon, black pepper, and coriander.",
+      "price": 35,
+      "image": "/images/lemon_rice.jpg",
+      "category": "Healthy Food",
+      "available": true,
+      "isTodaySpecial": false,
+      "date": "2026-09-29",
+      "_id": "menu_119",
+      "createdAt": "2026-09-29T15:17:42.498Z"
+    }
+  ],
+  "orders": [
+    {
+      "_id": "ord_1790266726839",
+      "orderId": "VIM-2026-104",
+      "tokenNumber": 104,
+      "userId": "usr_1790266648194zjcg",
+      "studentName": "Srinivas V M",
+      "studentId": "U11YB225S0031",
+      "items": [
+        {
+          "_id": "6ab552dc0b7409cb5b5ca0dd",
+          "name": "Bisibele Bath",
+          "price": 40,
+          "itemId": "menu_101",
+          "quantity": 1
+        },
+        {
+          "_id": "6ab552dc0b7409cb5b5ca0de",
+          "name": "Masala Dosa",
+          "price": 50,
+          "itemId": "menu_102",
+          "quantity": 1
+        },
+        {
+          "_id": "6ab552dc0b7409cb5b5ca0df",
+          "name": "Sambar Rice",
+          "price": 35,
+          "itemId": "menu_104",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 125,
+      "foodAmount": 125,
+      "deliveryFee": 0,
+      "discountAmount": 0,
+      "orderType": "PICKUP",
+      "pickupSlot": "1:00 PM – 1:10 PM",
+      "branch": "Main Canteen",
+      "paymentMethod": "Online Payment",
+      "paymentStatus": "PAID",
+      "orderStatus": "COLLECTED",
+      "deliveryStatus": "PENDING",
+      "specialInstructions": "",
+      "transactionId": "TXN_UPI_727088",
+      "notes": "",
+      "createdAt": "2026-09-26T07:15:20.747Z",
+      "updatedAt": "2026-09-24T16:26:56.436Z"
+    },
+    {
+      "_id": "ord_103",
+      "orderId": "VIM-2026-103",
+      "tokenNumber": 103,
+      "userId": "usr_std_003",
+      "studentName": "Karthik Rao",
+      "studentId": "VIM2023BBA077",
+      "items": [
+        {
+          "_id": "6ab552dc0b7409cb5b5ca0e0",
+          "name": "Bisibele Bath",
+          "price": 40,
+          "itemId": "menu_101",
+          "quantity": 1
+        },
+        {
+          "_id": "6ab552dc0b7409cb5b5ca0e1",
+          "name": "Medu Vada (1 Pc)",
+          "price": 20,
+          "itemId": "menu_109",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 60,
+      "foodAmount": 60,
+      "deliveryFee": 0,
+      "discountAmount": 0,
+      "orderType": "PICKUP",
+      "pickupSlot": "1:10 PM – 1:20 PM",
+      "branch": "Main Canteen",
+      "paymentMethod": "Online Payment",
+      "paymentStatus": "PAID",
+      "orderStatus": "CONFIRMED",
+      "deliveryStatus": "PENDING",
+      "specialInstructions": "",
+      "transactionId": "TXN_UPI_98492",
+      "notes": "",
+      "createdAt": "2026-09-26T07:15:20.747Z",
+      "updatedAt": "2026-09-24T16:26:52.234Z"
+    },
+    {
+      "_id": "ord_102",
+      "orderId": "VIM-2026-102",
+      "tokenNumber": 102,
+      "userId": "usr_std_002",
+      "studentName": "Priya Sharma",
+      "studentId": "VIM2025MCA018",
+      "items": [
+        {
+          "_id": "6ab552dc0b7409cb5b5ca0e2",
+          "name": "Sambar Rice",
+          "price": 35,
+          "itemId": "menu_104",
+          "quantity": 1
+        },
+        {
+          "_id": "6ab552dc0b7409cb5b5ca0e3",
+          "name": "Tea (Masala Chai)",
+          "price": 15,
+          "itemId": "menu_108",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 50,
+      "foodAmount": 50,
+      "deliveryFee": 0,
+      "discountAmount": 0,
+      "orderType": "PICKUP",
+      "pickupSlot": "1:30 PM – 1:40 PM",
+      "branch": "Main Canteen",
+      "paymentMethod": "Pay at Canteen",
+      "paymentStatus": "PENDING",
+      "orderStatus": "PREPARING",
+      "deliveryStatus": "PENDING",
+      "specialInstructions": "",
+      "transactionId": "TXN_CASH_102",
+      "notes": "",
+      "createdAt": "2026-09-26T07:15:20.747Z",
+      "updatedAt": "2026-09-24T15:47:44.322Z"
+    },
+    {
+      "_id": "ord_101",
+      "orderId": "VIM-2026-101",
+      "tokenNumber": 101,
+      "userId": "usr_std_001",
+      "studentName": "Rahul Gowda",
+      "studentId": "VIM2024BCA104",
+      "items": [
+        {
+          "_id": "6ab552dc0b7409cb5b5ca0e4",
+          "name": "Masala Dosa",
+          "price": 50,
+          "itemId": "menu_102",
+          "quantity": 1
+        },
+        {
+          "_id": "6ab552dc0b7409cb5b5ca0e5",
+          "name": "Filter Coffee",
+          "price": 20,
+          "itemId": "menu_107",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 70,
+      "foodAmount": 70,
+      "deliveryFee": 0,
+      "discountAmount": 0,
+      "orderType": "PICKUP",
+      "pickupSlot": "1:00 PM – 1:10 PM",
+      "branch": "Main Canteen",
+      "paymentMethod": "Online Payment",
+      "paymentStatus": "PAID",
+      "orderStatus": "COLLECTED",
+      "deliveryStatus": "PENDING",
+      "specialInstructions": "",
+      "transactionId": "TXN_UPI_98451",
+      "notes": "",
+      "createdAt": "2026-09-26T07:15:20.747Z",
+      "updatedAt": "2026-09-24T15:42:44.322Z"
+    },
+    {
+      "_id": "ord_1790406998565",
+      "orderId": "VIM-2026-105",
+      "tokenNumber": 105,
+      "userId": "usr_std_001_alias",
+      "studentName": "Rahul Gowda",
+      "studentId": "CAM2024BCA104",
+      "items": [
+        {
+          "name": "Masala Dosa",
+          "price": 50,
+          "itemId": "menu_101_b2yn",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 50,
+      "foodAmount": 50,
+      "deliveryFee": 0,
+      "discountAmount": 0,
+      "orderType": "PICKUP",
+      "pickupSlot": "1:00 PM – 1:10 PM",
+      "branch": "Main Canteen",
+      "paymentMethod": "Pay at Canteen",
+      "paymentStatus": "PENDING",
+      "orderStatus": "READY",
+      "deliveryStatus": "PENDING",
+      "specialInstructions": "",
+      "transactionId": "TXN_CASH_105",
+      "notes": "",
+      "createdAt": "2026-09-26T07:16:38.628Z",
+      "updatedAt": "2026-09-26T07:16:55.925Z"
+    },
+    {
+      "_id": "ord_1790611597012",
+      "orderId": "VIM-2026-106",
+      "tokenNumber": 106,
+      "userId": "usr_17906115738609ldo",
+      "studentName": "Srinivas V M",
+      "studentId": "VUM5897",
+      "items": [
+        {
+          "name": "Lemon Rice",
+          "price": 35,
+          "itemId": "menu_106",
+          "quantity": 1
+        },
+        {
+          "name": "Filter Coffee",
+          "price": 20,
+          "itemId": "menu_107",
+          "quantity": 1
+        },
+        {
+          "name": "Masala Dosa",
+          "price": 50,
+          "itemId": "menu_101_b2yn",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 105,
+      "foodAmount": 105,
+      "deliveryFee": 0,
+      "discountAmount": 0,
+      "orderType": "PICKUP",
+      "pickupSlot": "1:00 PM – 1:10 PM",
+      "branch": "Main Canteen",
+      "paymentMethod": "Online Payment",
+      "paymentStatus": "PAID",
+      "orderStatus": "CONFIRMED",
+      "deliveryStatus": "PENDING",
+      "specialInstructions": "",
+      "transactionId": "TXN_UPI_596600",
+      "notes": "",
+      "createdAt": "2026-09-28T16:06:37.092Z",
+      "updatedAt": "2026-09-28T16:06:37.012Z"
+    },
+    {
+      "_id": "ord_1790613109857",
+      "orderId": "VIM-2026-108",
+      "tokenNumber": 108,
+      "userId": "usr_std_001_alias",
+      "studentName": "Rahul Gowda",
+      "studentId": "CAM2024BCA104",
+      "items": [
+        {
+          "name": "Sambar Rice",
+          "price": 35,
+          "itemId": "menu_104",
+          "quantity": 2
+        }
+      ],
+      "totalAmount": 70,
+      "foodAmount": 70,
+      "deliveryFee": 0,
+      "discountAmount": 0,
+      "orderType": "PICKUP",
+      "pickupSlot": "1:00 PM – 1:10 PM",
+      "branch": "Main Canteen",
+      "paymentMethod": "Online Payment",
+      "paymentStatus": "PAID",
+      "orderStatus": "CONFIRMED",
+      "deliveryStatus": "PENDING",
+      "specialInstructions": "",
+      "transactionId": "TXN_UPI_109857",
+      "notes": "",
+      "createdAt": "2026-09-28T16:31:49.950Z",
+      "updatedAt": "2026-09-28T16:31:49.857Z"
+    }
+  ],
+  "payments": [
+    {
+      "orderId": "ord_1790613110925",
+      "amount": 50,
+      "method": "Online Payment",
+      "status": "PAID",
+      "transactionId": "TXN_UPI_110925",
+      "_id": "pay_1790613111082",
+      "createdAt": "2026-09-28T16:31:51.082Z"
+    },
+    {
+      "orderId": "ord_1790613109857",
+      "amount": 70,
+      "method": "Online Payment",
+      "status": "PAID",
+      "transactionId": "TXN_UPI_109857",
+      "_id": "pay_1790613110142",
+      "createdAt": "2026-09-28T16:31:50.142Z"
+    },
+    {
+      "orderId": "ord_1790613075888",
+      "amount": 35,
+      "method": "Online Payment",
+      "status": "PAID",
+      "transactionId": "TXN_UPI_075888",
+      "_id": "pay_1790613076097",
+      "createdAt": "2026-09-28T16:31:16.097Z"
+    },
+    {
+      "orderId": "ord_1790611597012",
+      "amount": 105,
+      "method": "Online Payment",
+      "status": "PAID",
+      "transactionId": "TXN_UPI_596600",
+      "_id": "pay_1790611597158",
+      "createdAt": "2026-09-28T16:06:37.158Z"
+    },
+    {
+      "orderId": "ord_1790268098810",
+      "amount": 80,
+      "method": "Pay at Canteen",
+      "status": "PENDING",
+      "transactionId": "TXN_CASH_105",
+      "_id": "pay_1790268098970",
+      "createdAt": "2026-09-24T16:41:38.971Z"
+    },
+    {
+      "orderId": "ord_1790267905516",
+      "amount": 80,
+      "method": "Online Payment",
+      "status": "PAID",
+      "transactionId": "TXN_UPI_905764",
+      "_id": "pay_1790267905518",
+      "createdAt": "2026-09-24T16:38:25.518Z"
+    },
+    {
+      "orderId": "ord_1790267817851",
+      "amount": 80,
+      "method": "Online Payment",
+      "status": "PAID",
+      "transactionId": "TXN_UPI_817361",
+      "_id": "pay_1790267817854",
+      "createdAt": "2026-09-24T16:36:57.854Z"
+    },
+    {
+      "orderId": "ord_1790267760678",
+      "amount": 40,
+      "method": "Online Payment",
+      "status": "PAID",
+      "transactionId": "TXN_UPI_760225",
+      "_id": "pay_1790267760681",
+      "createdAt": "2026-09-24T16:36:00.681Z"
+    },
+    {
+      "orderId": "ord_1790267591730",
+      "amount": 80,
+      "method": "Online Payment",
+      "status": "PAID",
+      "transactionId": "TXN_UPI_591259",
+      "_id": "pay_1790267591736",
+      "createdAt": "2026-09-24T16:33:11.736Z"
+    },
+    {
+      "orderId": "ord_1790266726839",
+      "amount": 125,
+      "method": "Online Payment",
+      "status": "PAID",
+      "transactionId": "TXN_UPI_727088",
+      "_id": "pay_1790266726847",
+      "createdAt": "2026-09-24T16:18:46.847Z"
+    },
+    {
+      "_id": "pay_101",
+      "orderId": "ord_101",
+      "amount": 70,
+      "method": "Online Payment",
+      "status": "PAID",
+      "transactionId": "TXN_UPI_98451",
+      "createdAt": "2026-09-24T15:12:44.322Z"
+    },
+    {
+      "_id": "pay_102",
+      "orderId": "ord_102",
+      "amount": 50,
+      "method": "Pay at Canteen",
+      "status": "PENDING",
+      "transactionId": "TXN_CASH_102",
+      "createdAt": "2026-09-24T15:27:44.322Z"
+    },
+    {
+      "_id": "pay_103",
+      "orderId": "ord_103",
+      "amount": 60,
+      "method": "Online Payment",
+      "status": "PAID",
+      "transactionId": "TXN_UPI_98492",
+      "createdAt": "2026-09-24T15:37:44.322Z"
+    }
+  ],
+  "notifications": [
+    {
+      "userId": "usr_std_001_alias",
+      "orderId": "ord_1790613110925",
+      "message": "💳 Payment of ₹50 received successfully for Token #109.",
+      "type": "PAYMENT_SUCCESSFUL",
+      "read": false,
+      "_id": "notif_1790613111386gy7",
+      "createdAt": "2026-09-28T16:31:51.386Z"
+    },
+    {
+      "userId": "usr_std_001_alias",
+      "orderId": "ord_1790613110925",
+      "message": "🎉 Order #109 Confirmed! Total: ₹50. Room Delivery to Hostel A Room #204",
+      "type": "ORDER_CONFIRMED",
+      "read": false,
+      "_id": "notif_1790613111227v4g",
+      "createdAt": "2026-09-28T16:31:51.227Z"
+    },
+    {
+      "userId": "usr_std_001_alias",
+      "orderId": "ord_1790613109857",
+      "message": "💳 Payment of ₹70 received successfully for Token #108.",
+      "type": "PAYMENT_SUCCESSFUL",
+      "read": false,
+      "_id": "notif_1790613110490gyh",
+      "createdAt": "2026-09-28T16:31:50.490Z"
+    },
+    {
+      "userId": "usr_std_001_alias",
+      "orderId": "ord_1790613109857",
+      "message": "🎉 Order #108 Confirmed! Total: ₹70. Pickup: 1:00 PM – 1:10 PM",
+      "type": "ORDER_CONFIRMED",
+      "read": false,
+      "_id": "notif_1790613110343y9t",
+      "createdAt": "2026-09-28T16:31:50.343Z"
+    },
+    {
+      "userId": "usr_std_001_alias",
+      "orderId": "ord_1790613075888",
+      "message": "💳 Payment of ₹35 received successfully for Token #107.",
+      "type": "PAYMENT_SUCCESSFUL",
+      "read": false,
+      "_id": "notif_1790613076423m7z",
+      "createdAt": "2026-09-28T16:31:16.423Z"
+    },
+    {
+      "userId": "usr_std_001_alias",
+      "orderId": "ord_1790613075888",
+      "message": "🎉 Order #107 Confirmed! Total: ₹35. Room Delivery to Hostel A Room #204",
+      "type": "ORDER_CONFIRMED",
+      "read": false,
+      "_id": "notif_1790613076239lem",
+      "createdAt": "2026-09-28T16:31:16.239Z"
+    },
+    {
+      "userId": "usr_17906115738609ldo",
+      "orderId": "ord_1790611597012",
+      "message": "💳 Payment of ₹105 received successfully for Token #106.",
+      "type": "PAYMENT_SUCCESSFUL",
+      "read": false,
+      "_id": "notif_17906115974761p8",
+      "createdAt": "2026-09-28T16:06:37.476Z"
+    },
+    {
+      "userId": "usr_17906115738609ldo",
+      "orderId": "ord_1790611597012",
+      "message": "🎉 Order #106 Confirmed! Total: ₹105. Pickup: 1:00 PM – 1:10 PM",
+      "type": "ORDER_CONFIRMED",
+      "read": false,
+      "_id": "notif_1790611597334uf7",
+      "createdAt": "2026-09-28T16:06:37.334Z"
+    },
+    {
+      "userId": "usr_1790269743064i3w2",
+      "orderId": "ord_1790269773862",
+      "message": "🔔 Your order #108 is ready for pickup!",
+      "type": "ORDER_READY",
+      "read": false,
+      "_id": "notif_17902698338342c0",
+      "createdAt": "2026-09-24T17:10:33.835Z"
+    },
+    {
+      "userId": "usr_1790269743064i3w2",
+      "orderId": "ord_1790269773862",
+      "message": "✅ Order #108 has been collected. Enjoy your meal!",
+      "type": "ORDER_COLLECTED",
+      "read": false,
+      "_id": "notif_179026982931243u",
+      "createdAt": "2026-09-24T17:10:29.312Z"
+    },
+    {
+      "userId": "usr_1790269743064i3w2",
+      "orderId": "ord_1790269773862",
+      "message": "🔔 Your order #108 is ready for pickup!",
+      "type": "ORDER_READY",
+      "read": false,
+      "_id": "notif_1790269824019c6f",
+      "createdAt": "2026-09-24T17:10:24.019Z"
+    },
+    {
+      "userId": "usr_1790269743064i3w2",
+      "orderId": "ord_1790269773862",
+      "message": "👨‍🍳 Your order #108 is now being prepared in the kitchen.",
+      "type": "ORDER_PREPARING",
+      "read": false,
+      "_id": "notif_1790269807063o7e",
+      "createdAt": "2026-09-24T17:10:07.063Z"
+    },
+    {
+      "userId": "usr_1790269743064i3w2",
+      "orderId": "ord_1790269773862",
+      "message": "🔔 Your order #108 is ready for pickup!",
+      "type": "ORDER_READY",
+      "read": false,
+      "_id": "notif_1790269799809j3s",
+      "createdAt": "2026-09-24T17:09:59.809Z"
+    },
+    {
+      "userId": "usr_1790269743064i3w2",
+      "orderId": "ord_1790269773862",
+      "message": "👨‍🍳 Your order #108 is now being prepared in the kitchen.",
+      "type": "ORDER_PREPARING",
+      "read": false,
+      "_id": "notif_17902697934782v0",
+      "createdAt": "2026-09-24T17:09:53.478Z"
+    },
+    {
+      "userId": "usr_std_001",
+      "orderId": "ord_1790268098810",
+      "message": "👨‍🍳 Your order #105 is now being prepared in the kitchen.",
+      "type": "ORDER_PREPARING",
+      "read": false,
+      "_id": "notif_1790268100116a2o",
+      "createdAt": "2026-09-24T16:41:40.116Z"
+    },
+    {
+      "userId": "usr_std_001",
+      "orderId": "ord_1790268098810",
+      "message": "🎉 Order #105 Confirmed! Total: ₹80. Pickup: 1:00 PM – 1:10 PM",
+      "type": "ORDER_CONFIRMED",
+      "read": false,
+      "_id": "notif_1790268099117nyl",
+      "createdAt": "2026-09-24T16:41:39.117Z"
+    },
+    {
+      "userId": "usr_std_001",
+      "orderId": "ord_1790267905516",
+      "message": "💳 Payment of ₹80 received successfully for Token #108.",
+      "type": "PAYMENT_SUCCESSFUL",
+      "read": false,
+      "_id": "notif_1790267905526if0",
+      "createdAt": "2026-09-24T16:38:25.526Z"
+    },
+    {
+      "userId": "usr_std_001",
+      "orderId": "ord_1790267905516",
+      "message": "🎉 Order #108 Confirmed! Total: ₹80. Pickup: 1:00 PM – 1:10 PM",
+      "type": "ORDER_CONFIRMED",
+      "read": false,
+      "_id": "notif_17902679055221g5",
+      "createdAt": "2026-09-24T16:38:25.522Z"
+    },
+    {
+      "userId": "usr_17902675473942x64",
+      "orderId": "ord_1790267817851",
+      "message": "💳 Payment of ₹80 received successfully for Token #107.",
+      "type": "PAYMENT_SUCCESSFUL",
+      "read": false,
+      "_id": "notif_1790267817856qaq",
+      "createdAt": "2026-09-24T16:36:57.856Z"
+    },
+    {
+      "userId": "usr_17902675473942x64",
+      "orderId": "ord_1790267817851",
+      "message": "🎉 Order #107 Confirmed! Total: ₹80. Pickup: 1:00 PM – 1:10 PM",
+      "type": "ORDER_CONFIRMED",
+      "read": false,
+      "_id": "notif_1790267817855oge",
+      "createdAt": "2026-09-24T16:36:57.855Z"
+    },
+    {
+      "userId": "usr_17902675473942x64",
+      "orderId": "ord_1790267760678",
+      "message": "💳 Payment of ₹40 received successfully for Token #106.",
+      "type": "PAYMENT_SUCCESSFUL",
+      "read": false,
+      "_id": "notif_17902677606840wh",
+      "createdAt": "2026-09-24T16:36:00.684Z"
+    },
+    {
+      "userId": "usr_17902675473942x64",
+      "orderId": "ord_1790267760678",
+      "message": "🎉 Order #106 Confirmed! Total: ₹40. Pickup: 1:00 PM – 1:10 PM",
+      "type": "ORDER_CONFIRMED",
+      "read": false,
+      "_id": "notif_1790267760682tof",
+      "createdAt": "2026-09-24T16:36:00.682Z"
+    },
+    {
+      "userId": "usr_17902675473942x64",
+      "orderId": "ord_1790267591730",
+      "message": "✅ Order #105 has been collected. Enjoy your meal!",
+      "type": "ORDER_COLLECTED",
+      "read": false,
+      "_id": "notif_1790267655144mi4",
+      "createdAt": "2026-09-24T16:34:15.144Z"
+    },
+    {
+      "userId": "usr_17902675473942x64",
+      "orderId": "ord_1790267591730",
+      "message": "🔔 Your order #105 is ready for pickup!",
+      "type": "ORDER_READY",
+      "read": false,
+      "_id": "notif_17902676182244zc",
+      "createdAt": "2026-09-24T16:33:38.224Z"
+    },
+    {
+      "userId": "usr_17902675473942x64",
+      "orderId": "ord_1790267591730",
+      "message": "✅ Order #105 has been collected. Enjoy your meal!",
+      "type": "ORDER_COLLECTED",
+      "read": false,
+      "_id": "notif_179026761605607n",
+      "createdAt": "2026-09-24T16:33:36.056Z"
+    },
+    {
+      "userId": "usr_17902675473942x64",
+      "orderId": "ord_1790267591730",
+      "message": "🔔 Your order #105 is ready for pickup!",
+      "type": "ORDER_READY",
+      "read": false,
+      "_id": "notif_1790267613042yvm",
+      "createdAt": "2026-09-24T16:33:33.042Z"
+    },
+    {
+      "userId": "usr_17902675473942x64",
+      "orderId": "ord_1790267591730",
+      "message": "👨‍🍳 Your order #105 is now being prepared in the kitchen.",
+      "type": "ORDER_PREPARING",
+      "read": false,
+      "_id": "notif_1790267610786hpy",
+      "createdAt": "2026-09-24T16:33:30.786Z"
+    },
+    {
+      "userId": "usr_17902675473942x64",
+      "orderId": "ord_1790267591730",
+      "message": "💳 Payment of ₹80 received successfully for Token #105.",
+      "type": "PAYMENT_SUCCESSFUL",
+      "read": false,
+      "_id": "notif_17902675917454fe",
+      "createdAt": "2026-09-24T16:33:11.745Z"
+    },
+    {
+      "userId": "usr_17902675473942x64",
+      "orderId": "ord_1790267591730",
+      "message": "🎉 Order #105 Confirmed! Total: ₹80. Pickup: 1:00 PM – 1:10 PM",
+      "type": "ORDER_CONFIRMED",
+      "read": false,
+      "_id": "notif_1790267591741vjw",
+      "createdAt": "2026-09-24T16:33:11.741Z"
+    },
+    {
+      "userId": "usr_1790266648194zjcg",
+      "orderId": "ord_1790266726839",
+      "message": "🔔 Your order #104 is ready for pickup!",
+      "type": "ORDER_READY",
+      "read": false,
+      "_id": "notif_1790267566829mba",
+      "createdAt": "2026-09-24T16:32:46.829Z"
+    },
+    {
+      "userId": "usr_1790266648194zjcg",
+      "orderId": "ord_1790266726839",
+      "message": "👨‍🍳 Your order #104 is now being prepared in the kitchen.",
+      "type": "ORDER_PREPARING",
+      "read": false,
+      "_id": "notif_17902672707433qn",
+      "createdAt": "2026-09-24T16:27:50.743Z"
+    },
+    {
+      "userId": "usr_1790266648194zjcg",
+      "orderId": "ord_1790266726839",
+      "message": "✅ Order #104 has been collected. Enjoy your meal!",
+      "type": "ORDER_COLLECTED",
+      "read": false,
+      "_id": "notif_1790267263616r52",
+      "createdAt": "2026-09-24T16:27:43.616Z"
+    },
+    {
+      "userId": "usr_1790266648194zjcg",
+      "orderId": "ord_1790266726839",
+      "message": "🔔 Your order #104 is ready for pickup!",
+      "type": "ORDER_READY",
+      "read": false,
+      "_id": "notif_1790267238545o5c",
+      "createdAt": "2026-09-24T16:27:18.545Z"
+    },
+    {
+      "userId": "usr_1790266648194zjcg",
+      "orderId": "ord_1790266726839",
+      "message": "✅ Order #104 has been collected. Enjoy your meal!",
+      "type": "ORDER_COLLECTED",
+      "read": false,
+      "_id": "notif_1790267216437bhv",
+      "createdAt": "2026-09-24T16:26:56.437Z"
+    },
+    {
+      "userId": "usr_1790266648194zjcg",
+      "orderId": "ord_1790266726839",
+      "message": "🔔 Your order #104 is ready for pickup!",
+      "type": "ORDER_READY",
+      "read": false,
+      "_id": "notif_1790267190026jfv",
+      "createdAt": "2026-09-24T16:26:30.026Z"
+    },
+    {
+      "userId": "usr_1790266648194zjcg",
+      "orderId": "ord_1790266726839",
+      "message": "👨‍🍳 Your order #104 is now being prepared in the kitchen.",
+      "type": "ORDER_PREPARING",
+      "read": false,
+      "_id": "notif_1790267175973ekj",
+      "createdAt": "2026-09-24T16:26:15.973Z"
+    },
+    {
+      "userId": "usr_1790266648194zjcg",
+      "orderId": "ord_1790266726839",
+      "message": "💳 Payment of ₹125 received successfully for Token #104.",
+      "type": "PAYMENT_SUCCESSFUL",
+      "read": false,
+      "_id": "notif_17902667268550ac",
+      "createdAt": "2026-09-24T16:18:46.856Z"
+    },
+    {
+      "userId": "usr_1790266648194zjcg",
+      "orderId": "ord_1790266726839",
+      "message": "🎉 Order #104 Confirmed! Total: ₹125. Pickup: 1:00 PM – 1:10 PM",
+      "type": "ORDER_CONFIRMED",
+      "read": false,
+      "_id": "notif_1790266726850ju1",
+      "createdAt": "2026-09-24T16:18:46.850Z"
+    },
+    {
+      "_id": "notif_103",
+      "userId": "usr_std_003",
+      "orderId": "ord_103",
+      "message": "🔔 Your order #103 is ready for pickup!",
+      "type": "ORDER_READY",
+      "read": false,
+      "createdAt": "2026-09-24T15:50:44.322Z"
+    }
+  ],
+  "tokenCounter": 108,
+  "branches": [
+    {
+      "id": "br_1",
+      "name": "Main Canteen",
+      "location": "Central Academic Block (Ground Floor)",
+      "isOpen": true,
+      "currentWaitTimeMinutes": 8
+    },
+    {
+      "id": "br_2",
+      "name": "Hostel Canteen",
+      "location": "Hostel Quadrangle Block",
+      "isOpen": true,
+      "currentWaitTimeMinutes": 5
+    },
+    {
+      "id": "br_3",
+      "name": "Block B Canteen",
+      "location": "Tech & Science Block",
+      "isOpen": true,
+      "currentWaitTimeMinutes": 10
+    },
+    {
+      "id": "br_4",
+      "name": "Evening Snacks Counter",
+      "location": "Campus Garden Lawn",
+      "isOpen": true,
+      "currentWaitTimeMinutes": 4
+    }
+  ],
+  "courses": [
+    {
+      "id": "c_bca",
+      "code": "BCA",
+      "name": "Bachelor of Computer Applications",
+      "type": "Degree",
+      "department": "Computer Science"
+    },
+    {
+      "id": "c_bba",
+      "code": "BBA",
+      "name": "Bachelor of Business Administration",
+      "type": "Degree",
+      "department": "Management Studies"
+    },
+    {
+      "id": "c_bcom",
+      "code": "BCom",
+      "name": "Bachelor of Commerce",
+      "type": "Degree",
+      "department": "Commerce"
+    },
+    {
+      "id": "c_ba",
+      "code": "BA",
+      "name": "Bachelor of Arts",
+      "type": "Degree",
+      "department": "Humanities"
+    },
+    {
+      "id": "c_bsc",
+      "code": "BSc",
+      "name": "Bachelor of Science",
+      "type": "Degree",
+      "department": "Science"
+    },
+    {
+      "id": "c_btech",
+      "code": "BE/BTech",
+      "name": "Bachelor of Engineering & Technology",
+      "type": "Degree",
+      "department": "Engineering"
+    },
+    {
+      "id": "c_mca",
+      "code": "MCA",
+      "name": "Master of Computer Applications",
+      "type": "Master's",
+      "department": "Computer Applications"
+    },
+    {
+      "id": "c_mba",
+      "code": "MBA",
+      "name": "Master of Business Administration",
+      "type": "Master's",
+      "department": "Business School"
+    },
+    {
+      "id": "c_msc",
+      "code": "MSc",
+      "name": "Master of Science",
+      "type": "Master's",
+      "department": "Science"
+    },
+    {
+      "id": "c_mcom",
+      "code": "MCom",
+      "name": "Master of Commerce",
+      "type": "Master's",
+      "department": "Commerce"
+    },
+    {
+      "id": "c_ma",
+      "code": "MA",
+      "name": "Master of Arts",
+      "type": "Master's",
+      "department": "Arts"
+    }
+  ],
+  "transfers": [
+    {
+      "itemId": "menu_104",
+      "itemName": "Sambar Rice",
+      "quantity": 15,
+      "fromBranch": "Main Canteen",
+      "toBranch": "Hostel Canteen",
+      "requestedBy": "Hostel Canteen Branch Manager",
+      "id": "tr_1790613112010",
+      "status": "REQUESTED",
+      "createdAt": "2026-09-28T16:31:52.010Z",
+      "updatedAt": "2026-09-28T16:31:52.010Z"
+    },
+    {
+      "itemId": "menu_101",
+      "itemName": "Bisibele Bath",
+      "quantity": 15,
+      "fromBranch": "Main Canteen",
+      "toBranch": "Hostel Canteen",
+      "requestedBy": "Hostel Canteen Branch Manager",
+      "id": "tr_1790613077004",
+      "status": "REQUESTED",
+      "createdAt": "2026-09-28T16:31:17.004Z",
+      "updatedAt": "2026-09-28T16:31:17.004Z"
+    },
+    {
+      "id": "tr_101",
+      "itemId": "menu_102",
+      "itemName": "Masala Dosa Batter (10 Packs)",
+      "quantity": 10,
+      "fromBranch": "Main Canteen",
+      "toBranch": "Hostel Canteen",
+      "status": "RECEIVED",
+      "requestedBy": "Hostel Canteen Branch Manager",
+      "approvedBy": "Campus Canteen Operator",
+      "createdAt": "2026-09-28T15:30:50.693Z",
+      "updatedAt": "2026-09-28T16:00:50.693Z"
+    }
+  ],
+  "coupons": [
+    {
+      "code": "WELCOME10",
+      "description": "10% off on all campus meals",
+      "discountPercent": 10,
+      "minOrderAmount": 30,
+      "active": true
+    },
+    {
+      "code": "BCA10",
+      "description": "10% exclusive discount for BCA students",
+      "discountPercent": 10,
+      "targetCourse": "BCA",
+      "minOrderAmount": 40,
+      "active": true
+    },
+    {
+      "code": "FREEDEL",
+      "description": "Free room delivery on orders above ₹80",
+      "discountAmount": 15,
+      "minOrderAmount": 80,
+      "active": true
+    },
+    {
+      "code": "SNACK20",
+      "description": "₹20 flat discount on orders above ₹100",
+      "discountAmount": 20,
+      "minOrderAmount": 100,
+      "active": true
+    }
+  ],
+  "wasteRecords": [
+    {
+      "id": "wst_101",
+      "date": "2026-09-28",
+      "branch": "Main Canteen",
+      "itemId": "menu_101",
+      "itemName": "Bisibele Bath",
+      "preparedQty": 60,
+      "soldQty": 54,
+      "remainingQty": 6,
+      "wastedQty": 2,
+      "reason": "Surplus lunch prep - 4 transferred to Hostel Canteen"
+    },
+    {
+      "id": "wst_102",
+      "date": "2026-09-28",
+      "branch": "Block B Canteen",
+      "itemId": "menu_102",
+      "itemName": "Masala Dosa",
+      "preparedQty": 80,
+      "soldQty": 78,
+      "remainingQty": 2,
+      "wastedQty": 1,
+      "reason": "End of breakfast shelf life"
+    }
+  ],
+  "auditLogs": [
+    {
+      "user": "manager@campus.edu",
+      "role": "branch_manager",
+      "action": "STOCK_TRANSFER_REQUESTED",
+      "target": "15x Sambar Rice",
+      "metadata": {
+        "fromBranch": "Main Canteen",
+        "toBranch": "Hostel Canteen"
+      },
+      "id": "aud_1790613112011thz",
+      "timestamp": "2026-09-28T16:31:52.011Z"
+    },
+    {
+      "user": "manager@campus.edu",
+      "role": "branch_manager",
+      "action": "STOCK_TRANSFER_REQUESTED",
+      "target": "15x Bisibele Bath",
+      "metadata": {
+        "fromBranch": "Main Canteen",
+        "toBranch": "Hostel Canteen"
+      },
+      "id": "aud_17906130770047n7",
+      "timestamp": "2026-09-28T16:31:17.004Z"
+    },
+    {
+      "id": "aud_1",
+      "user": "admin@campus.edu",
+      "role": "admin",
+      "action": "COUPON_ACTIVATED",
+      "target": "WELCOME10",
+      "metadata": {
+        "discount": "10%"
+      },
+      "timestamp": "2026-09-28T14:30:50.693Z"
+    },
+    {
+      "id": "aud_2",
+      "user": "srinivasvm1122@gmail.com",
+      "role": "operator",
+      "action": "STOCK_TRANSFER_APPROVED",
+      "target": "Hostel Canteen (10 Packs)",
+      "metadata": {
+        "from": "Main Canteen",
+        "to": "Hostel Canteen"
+      },
+      "timestamp": "2026-09-28T15:30:50.693Z"
+    }
+  ]
+}

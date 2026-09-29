@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" width="100%" height="100%">
+  <defs>
+    <!-- Rich Vaisiri Group Plum/Purple -->
+    <style>
+      .vg-logo { fill: #70206B; }
+    </style>
+  </defs>
+
+  <g class="vg-logo">
+    <!-- ======================================================== -->
+    <!-- 1. LETTER 'V' - UPPER LEFT STEM WITH CLASSIC ROMAN SERIF  -->
+    <!-- ======================================================== -->
+    <!-- Top horizontal serif: flat top from x=265 to x=375 at y=215 -->
+    <!-- Bracketed serif on left, straight diagonal slab down to y=385 -->
+    <path d="
+      M 265 215 
+      L 375 215 
+      C 370 226 366 238 368 250 
+      L 423 385 
+      L 366 385 
+      L 316 265 
+      C 305 235 285 224 265 222 
+      Z
+    " />
+
+    <!-- ======================================================== -->
+    <!-- 2. LETTER 'V' - LOWER LEFT STEM AFTER HORIZONTAL SLICE   -->
+    <!-- ======================================================== -->
+    <!-- Horizontal stencil gap from y=385 to y=405 (20px gap)   -->
+    <!-- Lower slab continues down to sharp bottom apex (446, 615) -->
+    <path d="
+      M 374 405 
+      L 431 405 
+      L 446 615 
+      Z
+    " />
+
+    <!-- ======================================================== -->
+    <!-- 3. LETTER 'V' - RIGHT STEM ASCENDING THROUGH 'G'         -->
+    <!-- ======================================================== -->
+    <!-- Ascends from sharp apex (446, 615) up-right at ~27 deg   -->
+    <!-- Cuts through the letter G as a clean diagonal bar         -->
+    <path d="
+      M 446 615 
+      L 582 250 
+      L 634 265 
+      L 498 615 
+      Z
+    " />
+
+    <!-- ======================================================== -->
+    <!-- 4. LETTER 'G' - MAJESTIC SERIF CURVE & TERMINAL          -->
+    <!-- ======================================================== -->
+    <!-- Classical Didone Roman uppercase 'G'                     -->
+    <!-- Top beak/serif at (675, 260) curving up to crest (575, 175) -->
+    <!-- Outer/inner bowl curving around to bottom (575, 485)     -->
+    <path d="
+      M 675 260 
+      L 675 240 
+      C 675 240 655 245 640 235 
+      C 625 225 615 205 615 190 
+      C 595 180 565 175 540 175 
+      C 455 175 390 235 390 325 
+      C 390 415 455 475 545 475 
+      C 615 475 660 435 675 385 
+      L 620 385 
+      C 610 415 580 435 545 435 
+      C 480 435 435 385 435 325 
+      C 435 255 480 215 540 215 
+      C 580 215 610 235 625 270 
+      L 645 255 
+      C 645 255 660 260 675 260 
+      Z
+    " />
+
+    <!-- ======================================================== -->
+    <!-- 5. LETTER 'G' - RIGHT VERTICAL SPUR, SERIFS & CROSSBAR   -->
+    <!-- ======================================================== -->
+    <!-- Vertical stem on the right: from y=275 to y=435          -->
+    <path d="
+      M 635 275 
+      L 675 275 
+      L 675 435 
+      L 635 435 
+      Z
+    " />
+    <!-- Top horizontal serif on spur -->
+    <path d="
+      M 620 275 
+      L 690 275 
+      L 690 285 
+      L 620 285 
+      Z
+    " />
+    <!-- Bottom horizontal serif on spur -->
+    <path d="
+      M 620 425 
+      L 690 425 
+      L 690 435 
+      L 620 435 
+      Z
+    " />
+    <!-- Inner horizontal crossbar extending left into counter -->
+    <path d="
+      M 565 350 
+      L 640 350 
+      L 640 375 
+      L 565 375 
+      Z
+    " />
+  </g>
+</svg>
