@@ -1,101 +1,161 @@
-# VIMTECH CANTEEN CENTER
-### Smart College Canteen Management System
-**College:** Vaisiri Institute of Management and Technology (VIMTECH)  
-**Tagline:** *"Order Smart. Skip the Queue."*
+# 🍱 VIMTECH CANTEEN CENTER
+### Smart Campus Food Ordering, Queue Management & Delivery System
+> **Vaisiri Institute of Management and Technology (VIMTECH)**  
+> *"Order Smart. Skip the Queue. Zero Food Waste."*
+
+[![React 19](https://img.shields.io/badge/React-19.0-61DAFB?logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-v4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Express.js](https://img.shields.io/badge/Express-4.x-000000?logo=express&logoColor=white)](https://expressjs.com/)
+[![Supabase](https://img.shields.io/badge/Database-Supabase%20PostgreSQL-3ECF8E?logo=supabase&logoColor=white)](https://supabase.com/)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ---
 
 ## 📌 Project Overview
-VIMTECH Canteen Center is a full-stack web application designed and built for **Vaisiri Institute of Management and Technology (VIMTECH)** to eliminate lunch-hour congestion, streamline cafeteria food preparation, and give students a smooth digital pre-ordering experience with designated lunch timing slots and live token tracking.
 
-The system features two interconnected real-time portals:
-1. **Student Portal:** Browse daily menu, add Karnataka canteen favorites to cart, choose assigned lunch pickup slots, complete demo payments, and track live order status from kitchen preparation to pickup counter.
-2. **Operator Portal:** Kitchen and counter operations dashboard with live incoming orders, sequential token management, one-click order status dispatch, crowd queue balancing, food inventory control, and revenue analytics.
+**VIMTECH Canteen Center** is a full-stack campus food-tech platform engineered to eliminate rush-hour canteen queues, streamline multi-branch cafeteria operations, manage kitchen prep times, and offer students pre-scheduled time-slot pickup and hostel room delivery.
+
+Built for **Vaisiri Institute of Management and Technology (VIMTECH)**, this system operates with 6 distinct user roles, real-time order tracking, UPI QR Code Scan & Pay, and an intelligent food surplus & waste reduction engine.
 
 ---
 
 ## 🚀 Key Features
 
-### 🎓 Student Portal
-- **Campus Hero & Authentication:** Visual hero landing with the VIMTECH campus building background, secure JWT authentication with bcrypt password hashing, and role separation.
-- **Student Registration:** Supports Degree and Master's student profiles with Course (BCA, BBA, B.Com, MCA, MBA) and Year.
-- **Designated Lunch Timings & Crowd Management:**
-  - **Degree Students:** 1:00 PM – 1:30 PM (Slots: 1:00–1:10 PM, 1:10–1:20 PM, 1:20–1:30 PM)
-  - **Master's Students:** 1:30 PM – 2:00 PM (Slots: 1:30–1:40 PM, 1:40–1:50 PM, 1:50–2:00 PM)
-  - *Strict system enforcement:* Prevents students from selecting the wrong lunch window.
-- **Authentic Karnataka Canteen Menu:** Bisibele Bath (₹40), Masala Dosa (₹50), Idli (₹30), Sambar Rice (₹35), Curd Rice (₹30), Lemon Rice (₹35), Tea (₹15), Coffee (₹20), and more.
-- **Smart Cart & Interactive Checkout:** Dynamic quantity steppers, slot picker, and kitchen notes.
-- **Payment Options:**
-  - **Online Payment:** Interactive demo UPI QR code / instant sandbox verification (Payment Status: `PAID`).
-  - **Pay at Canteen:** Counter cash / POS (Payment Status: `PENDING`).
-- **Live Real-Time Order Tracking:** Four clear progression states:
-  $$\text{CONFIRMED} \longrightarrow \text{PREPARING} \longrightarrow \text{READY} \longrightarrow \text{COLLECTED}$$
-  - Pleasant audio chime, notification badge, and visual toast when operator marks the order `READY`!
-- **Notification Center:** Real-time bell notifications dropdown with unread count.
-- **Order History & Profile Management:** Search and filter past receipts, view total spending, and update academic details.
-
-### 👨‍🍳 Operator Portal
-- **Real-Time Order Stream:** Instant sync across browser tabs using Server-Sent Events (SSE) and live polling.
-- **Live Order Management Table:** Shows Token number, Order ID, Student Name, Student ID, Items & Quantities, Bill Amount, Pickup Slot, Payment Status, and Order Time.
-- **One-Click Kitchen Controls:** Transition orders between `CONFIRMED`, `PREPARING`, `READY`, and `COLLECTED`.
-- **Queue & Rush Balancing:** Breakdown of active orders per 10-minute pickup slot (e.g. 1:00–1:10 PM, 1:10–1:20 PM, 1:20–1:30 PM) to help kitchen staff batch cook efficiently.
-- **Menu & Stock Management:** Add new dishes, adjust prices, edit descriptions, toggle stock availability (In Stock / Sold Out), and highlight Today's Specials.
-- **Business & Rush Analytics:** Real-time KPI summary cards (Today's Sales, Total Orders, Pending, Preparing, Ready, Completed) and top food item popularity charts.
+### 🎓 1. Student Portal
+- **Smart Menu Catalog (19+ Authentic Dishes):** Categorized into Breakfast, Lunch, Meals, Snacks, Fast Food, Beverages, Healthy Food, and Desserts with authentic high-resolution food photography.
+- **Designated Lunch Slot Reservation:**
+  - **Degree Students (BCA, BBA, B.Com, B.Tech, B.Sc):** 1:00 PM – 1:30 PM (10-min arrival slots to balance kitchen load).
+  - **Master's Students (MCA, MBA, M.Tech, M.Sc):** 1:30 PM – 2:00 PM.
+- **Dual Delivery Modes:**
+  - 🏃 **Counter Pickup:** Assigned 10-minute slot with instant digital QR token.
+  - 🛵 **Hostel Room Delivery:** Select building (Hostel A, Hostel B, Tech Block), floor, and room number.
+- **Live Real-Time Order Tracking:** 5 progressive states:
+  $$\text{CONFIRMED} \longrightarrow \text{PREPARING} \longrightarrow \text{READY} \longrightarrow \text{OUT FOR DELIVERY / PICKUP} \longrightarrow \text{DELIVERED / COLLECTED}$$
+  - Audio chimes and celebration confetti trigger automatically when the order is ready!
+- **UPI QR Code & Cashless Payment:** Seamless Scan & Pay with Google Pay, PhonePe, Paytm, or BHIM UPI, plus "Pay at Canteen" option.
+- **Campus Coupons & Deals:** Integrated promo codes (`WELCOME10`, `BCA10`, `FREEDEL`, `SNACK20`).
+- **Student Profile & Order History:** Detailed receipts, one-click re-ordering, food ratings, and expense tracking.
 
 ---
 
-## 🛠️ Tech Stack
-- **Frontend:** React 19, TypeScript, Tailwind CSS, Lucide React icons, Canvas Confetti.
-- **Backend:** Node.js, Express 4, REST API, Server-Sent Events (SSE).
-- **Authentication:** JSON Web Tokens (JWT), bcryptjs password hashing.
-- **Database:** MongoDB Atlas (Mongoose ODM) with built-in persistent storage fallback for instant evaluation.
-- **Environment:** dotenv.
+### 👨‍🍳 2. Operator & Kitchen Portal
+- **Live Order Stream:** Real-time synchronization across counters and kitchens.
+- **Time-Slot Queue Breakdown:** Visual breakdown of orders per 10-minute pickup window for efficient batch cooking.
+- **One-Click Kitchen Controls:** Transition orders from Confirmed $\to$ Preparing $\to$ Ready $\to$ Collected.
+- **Menu & Stock Manager:** Real-time price updates, availability toggling (In Stock / Sold Out), and Today's Specials curation.
+- **Live KDS (Kitchen Display System):** Dedicated prep timer countdowns and ingredient prep checklists.
 
 ---
 
-## ⚡ Supabase Setup & Configuration
-
-The application is configured to connect directly to Supabase (`qnfoycxcalvdczhtgpxj.supabase.co`).
-
-1. Tables are automatically provisioned in PostgreSQL (`users`, `menu_items`, `orders`, `payments`, `notifications`, `counters`).
-2. Add your Supabase credentials to `.env`:
-   ```bash
-   SUPABASE_URL="https://qnfoycxcalvdczhtgpxj.supabase.co"
-   SUPABASE_ANON_KEY="..."
-   SUPABASE_SERVICE_ROLE_KEY="..."
-   DATABASE_URL="postgres://postgres:password@db.qnfoycxcalvdczhtgpxj.supabase.co:5432/postgres"
-   JWT_SECRET="your_secret_jwt_key"
-   PORT=3000
-   ```
+### 🛵 3. Delivery Agent Portal
+- **Hostel Room Delivery Dispatch:** View pending deliveries with destination hostel block, floor, and room number.
+- **Live Status Toggles:** Mark orders as `ASSIGNED` $\to$ `OUT_FOR_DELIVERY` $\to$ `DELIVERED`.
+- **Student Contact & Navigation:** Quick directions and direct calling shortcuts.
 
 ---
 
-## ⚙️ Environment Variables (.env)
-```env
-PORT=3000
-JWT_SECRET=vimtech_canteen_jwt_secret_dev_key_2026
-SUPABASE_URL="https://qnfoycxcalvdczhtgpxj.supabase.co"
-SUPABASE_ANON_KEY="your_anon_key"
-SUPABASE_SERVICE_ROLE_KEY="your_service_role_key"
-DATABASE_URL="postgres://postgres:password@db.qnfoycxcalvdczhtgpxj.supabase.co:5432/postgres"
+### 🏢 4. Multi-Branch & Waste Management
+- **Multi-Branch Network:**
+  - 📍 Main Campus Canteen (Central Academic Block)
+  - 📍 Hostel Canteen (Hostel Quadrangle)
+  - 📍 Block B Canteen (Tech & Science Block)
+  - 📍 Evening Snacks Counter (Campus Lawn)
+- **Inter-Branch Stock Transfers:** Balance surplus items between high-rush and low-stock counters.
+- **Food Waste Reduction Engine:** Log surplus food at end-of-day, apply dynamic clearance discounts, and generate sustainability metrics.
+
+---
+
+### 🛡️ 5. Super Admin & Governance
+- **Executive Analytics:** Real-time revenue charts, peak rush hours, top-selling items, and departmental consumption statistics.
+- **User Role Management:** Assign roles (Student, Operator, Kitchen Staff, Delivery Agent, Branch Manager, Admin).
+- **System Audit Logs:** Immutable security trail recording every order state change, menu update, and financial transaction.
+
+---
+
+## 🛠️ Architecture & Tech Stack
+
+```
+┌────────────────────────────────────────────────────────┐
+│                   Vite + React 19 Frontend             │
+│   (TypeScript • Tailwind CSS • Lucide Icons • Canvas)   │
+└───────────────────────────┬────────────────────────────┘
+                            │ REST API / JSON
+┌───────────────────────────▼────────────────────────────┐
+│                  Express.js Backend Server             │
+│   (Node.js • JWT Auth • Role-Based Access Control)     │
+└───────────────────────────┬────────────────────────────┘
+                            │ PostgreSQL Queries
+┌───────────────────────────▼────────────────────────────┐
+│               Supabase Cloud Database                  │
+│   (Tables: users, menu_items, orders, branches, logs)  │
+│   + Local JSON Persistent Storage Fallback Engine      │
+└────────────────────────────────────────────────────────┘
 ```
 
+- **Frontend:** React 19, TypeScript, Tailwind CSS, Lucide React, Canvas Confetti.
+- **Backend:** Node.js, Express.js, TypeScript (`tsx`).
+- **Database:** Supabase PostgreSQL with automated schema migration and local persistence fallback.
+- **Security:** JWT authentication, bcrypt password hashing, input sanitization, and strict Role-Based Access Control (RBAC).
+
 ---
 
-## 🏃 How to Run the Application
+## 🔑 Demo Login Credentials
 
-### 1. Install Dependencies
+For quick evaluation, click the demo buttons on the login screen or use these credentials:
+
+| Role | Email | Password | Assigned Area / Details |
+| :--- | :--- | :--- | :--- |
+| 🎓 **Degree Student** | `rahul@vimtech.edu` | `student123` | BCA 3rd Year (Lunch: 1:00–1:30 PM) |
+| 🎓 **Master's Student** | `priya@vimtech.edu` | `student123` | MCA 1st Year (Lunch: 1:30–2:00 PM) |
+| 👨‍🍳 **Canteen Operator** | `operator@vimtech.edu` | `admin123` | Main Canteen Counter |
+| 🍳 **Kitchen Staff** | `kitchen@vimtech.edu` | `kitchen123` | Central Cooking Section |
+| 🛵 **Delivery Agent** | `delivery@vimtech.edu` | `delivery123` | Campus & Hostel Delivery Fleet |
+| 🏢 **Branch Manager** | `branch@vimtech.edu` | `branch123` | Block B & Hostel Canteens |
+| 🛡️ **Super Admin** | `admin@vimtech.edu` | `admin123` | Campus Food Directorate |
+
+---
+
+## 🏃 How to Run Locally
+
+### Prerequisites
+- [Node.js](https://nodejs.org/) (version 18 or higher)
+- [npm](https://www.npmjs.com/) or [bun](https://bun.sh/)
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/<your-username>/<repo-name>.git
+cd <repo-name>
+```
+
+### 2. Install Dependencies
 ```bash
 npm install
 ```
 
-### 2. Start the Full-Stack Application
-Runs both Express backend and Vite frontend on `http://localhost:3000`:
+### 3. Configure Environment Variables
+Copy the example file:
+```bash
+cp .env.example .env
+```
+Default `.env` configuration:
+```env
+PORT=3000
+JWT_SECRET=vimtech_canteen_jwt_secret_dev_key_2026
+SUPABASE_URL="https://qnfoycxcalvdczhtgpxj.supabase.co"
+SUPABASE_ANON_KEY="your_supabase_anon_key"
+SUPABASE_SERVICE_ROLE_KEY="your_supabase_service_role_key"
+DATABASE_URL="postgres://postgres:password@db.qnfoycxcalvdczhtgpxj.supabase.co:5432/postgres"
+```
+*(Note: If Supabase keys are not set, the built-in local JSON database automatically activates, ensuring 100% offline functionality without external configuration!)*
+
+### 4. Start Development Server
 ```bash
 npm run dev
 ```
+Open **[http://localhost:3000](http://localhost:3000)** in your browser!
 
-### 3. Build for Production
+### 5. Build for Production
 ```bash
 npm run build
 npm start
@@ -103,46 +163,62 @@ npm start
 
 ---
 
-## 🔑 Demo Credentials for Testing & Evaluation
+## 🧪 Quick 2-Tab Demonstration Guide
 
-### 🎓 Demo Student 1 (Degree Student - Rahul)
-- **Email:** `rahul@vimtech.edu`
-- **Password:** `student123`
-- **Course & Year:** BCA 3rd Year
-- **Student ID:** `VIM2024BCA104`
-- **Assigned Lunch Window:** 1:00 PM – 1:30 PM
+To see the real-time queue in action:
 
-### 🎓 Demo Student 2 (Master's Student - Priya)
-- **Email:** `priya@vimtech.edu`
-- **Password:** `student123`
-- **Course & Year:** MCA 1st Year
-- **Student ID:** `VIM2025MCA018`
-- **Assigned Lunch Window:** 1:30 PM – 2:00 PM
+1. **Tab 1 (Student View):**
+   - Log in as **Rahul** (`rahul@vimtech.edu` / `student123`).
+   - Add **Masala Dosa (₹50)** and **Cold Coffee (₹40)** to your cart.
+   - Choose pickup slot `1:10 PM – 1:20 PM`.
+   - Select **Online Payment**, review the UPI QR, and click **Place Order**.
+   - Your order token (e.g. **#105**) will appear with live status `CONFIRMED`.
 
-### 👨‍🍳 Demo Canteen Operator (Kitchen Counter Desk)
-- **Email:** `operator@vimtech.edu`
-- **Password:** `admin123`
-- **Role:** Canteen Operator
-
-*(Quick 1-Click login buttons are also provided on the login page for effortless live presentations!)*
+2. **Tab 2 (Operator View):**
+   - Open an incognito tab or second browser window.
+   - Log in as **Operator** (`operator@vimtech.edu` / `admin123`).
+   - Order **#105** appears instantly on the Live Orders board.
+   - Click **PREPARING** $\to$ Student's Tab 1 changes to *PREPARING*.
+   - Click **READY** $\to$ Student's Tab 1 rings an audio chime and triggers celebration confetti!
+   - Operator clicks **COLLECTED** $\to$ Receipt is stamped completed.
 
 ---
 
-## 🧪 Live Two-Tab Demonstration Flow
+## 📂 Project Structure
 
-Open two browser tabs on the same computer:
+```
+├── public/                 # Static assets, logos, dish photos
+├── server/
+│   ├── routes/             # Express API routes (auth, orders, menu, waste, branches)
+│   ├── db.ts               # Local DB & Supabase integration
+│   ├── models.ts           # Data interfaces and models
+│   └── supabase.ts         # Supabase client connector
+├── src/
+│   ├── components/
+│   │   ├── student/        # Student Catalog, Cart, Payment, Tracking, History
+│   │   ├── operator/       # Live Orders, Menu Manager, Queue Slot Breakdown
+│   │   ├── kitchen/        # Kitchen Display System (KDS)
+│   │   ├── delivery/       # Hostel Room Delivery Dashboard
+│   │   ├── branch/         # Multi-branch inventory & transfer
+│   │   ├── admin/          # Revenue analytics, audit trail, user RBAC
+│   │   └── common/         # QR Code, Header, Notifications, Logo
+│   ├── context/            # AuthContext & CartContext
+│   ├── services/api.ts     # Client REST API service
+│   ├── types.ts            # TypeScript definitions
+│   └── App.tsx             # Main App root & routing
+├── server.ts               # Express + Vite dev server entry point
+└── package.json            # Scripts & project dependencies
+```
 
-1. **Tab 1: Student Portal**
-   - Log in as Rahul (`rahul@vimtech.edu` / `student123`).
-   - Add **Bisibele Bath × 2** (₹80) and **Coffee × 1** (₹20).
-   - Select pickup slot `1:10 PM – 1:20 PM`.
-   - Choose **Online Payment** and click **Place Order**.
-   - Notice Token **#104** generated with the Golden Ticket!
-2. **Tab 2: Operator Portal**
-   - Log in as Operator (`operator@vimtech.edu` / `admin123`).
-   - Order **#104** appears immediately on the Live Orders board.
-   - Click **PREPARING** $\rightarrow$ Student Tab 1 updates to *PREPARING*.
-   - Click **READY** $\rightarrow$ Student Tab 1 rings a chime, fires celebration confetti, and displays:  
-     `🔔 Your order #104 is ready for pickup!`
-   - Student collects food at Counter 1.
-   - Operator clicks **COLLECTED** $\rightarrow$ Order completed!
+---
+
+## 👨‍💻 Author & Credits
+
+- **Developer:** Srinivas V. M.
+- **Institution:** Vaisiri Institute of Management and Technology (VIMTECH)
+- **Email:** srinivasvm1122@gmail.com
+
+---
+
+## 📄 License
+This project is open-source and available under the **MIT License**.
