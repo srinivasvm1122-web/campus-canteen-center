@@ -20,7 +20,7 @@ import { useAuth } from '../context/AuthContext.tsx';
 import { useCart } from '../context/CartContext.tsx';
 import { NotificationsDropdown } from './NotificationsDropdown.tsx';
 import { ShareAppModal } from './ShareAppModal.tsx';
-import { CampusLogo } from './common/VaisiriLogo.tsx';
+import { CampusLogo } from './common/CampusLogo.tsx';
 import { UserRole } from '../types.ts';
 
 interface HeaderProps {

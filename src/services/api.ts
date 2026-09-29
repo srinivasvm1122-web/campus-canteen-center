@@ -14,7 +14,7 @@ import {
   UserRole
 } from '../types.ts';
 
-const TOKEN_KEY = 'vimtech_canteen_token';
+const TOKEN_KEY = 'campus_canteen_token';
 
 export const authStorage = {
   getToken: (): string | null => localStorage.getItem(TOKEN_KEY),

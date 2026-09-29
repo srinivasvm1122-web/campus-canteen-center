@@ -51,7 +51,7 @@ export const MASTERS_SLOTS = [
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
-const CART_STORAGE_KEY = 'vimtech_canteen_cart';
+const CART_STORAGE_KEY = 'campus_canteen_cart';
 
 export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { user } = useAuth();

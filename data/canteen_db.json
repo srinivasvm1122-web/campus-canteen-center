@@ -2,9 +2,9 @@
   "users": [
     {
       "_id": "usr_op_001",
-      "name": "VIMTECH Canteen Operator",
-      "studentId": "STAFF-VIM-01",
-      "email": "operator@vimtech.edu",
+      "name": "Campus Canteen Operator",
+      "studentId": "STAFF-OP-01",
+      "email": "operator@campus.edu",
       "password": "$2b$10$Cn78iIL01/kH21i3sRchh.jkwpPHAdGhNBHU62oNAUeiXOvwN/S2y",
       "phone": "+91 98450 12345",
       "course": "Administration",
@@ -16,8 +16,8 @@
     {
       "_id": "usr_std_001",
       "name": "Rahul Gowda",
-      "studentId": "VIM2024BCA104",
-      "email": "rahul@vimtech.edu",
+      "studentId": "CAM2024BCA104",
+      "email": "rahul@campus.edu",
       "password": "$2b$10$SRNlK15SBmXbig.J6k7ITuOAgKVH0.INEdvG4VBj1u7b6zl9TkdNO",
       "phone": "+91 99012 34567",
       "course": "BCA (Bachelor of Computer Applications)",
@@ -29,8 +29,8 @@
     {
       "_id": "usr_std_002",
       "name": "Priya Sharma",
-      "studentId": "VIM2025MCA018",
-      "email": "priya@vimtech.edu",
+      "studentId": "CAM2025MCA018",
+      "email": "priya@campus.edu",
       "password": "$2b$10$SRNlK15SBmXbig.J6k7ITuOAgKVH0.INEdvG4VBj1u7b6zl9TkdNO",
       "phone": "+91 98860 54321",
       "course": "MCA (Master of Computer Applications)",
@@ -44,7 +44,7 @@
       "name": "Srinivas V M",
       "studentId": "U11YB225S0031",
       "email": "srinivasvm1122@gmail.com",
-      "password": "$2b$10$e80qzCJs6Y33YKiTbqcYn.LIZv4npFg7gBsWl72.5IWK3v7nTExZW",
+      "password": "$2b$10$XNCPuFr9gSaIbMttBpvqyOXdqVMd/la3URdl0fLYuJbJap8IEUkkq",
       "phone": "6360142549",
       "course": "BCA",
       "year": "3rd Year",
@@ -62,9 +62,9 @@
     {
       "_id": "usr_op_vaasu",
       "name": "Srinivas (Vaasu)",
-      "studentId": "STAFF-VIM-02",
+      "studentId": "STAFF-OP-02",
       "email": "vaasu1122@gmail.com",
-      "password": "$2b$10$e80qzCJs6Y33YKiTbqcYn.LIZv4npFg7gBsWl72.5IWK3v7nTExZW",
+      "password": "$2b$10$XNCPuFr9gSaIbMttBpvqyOXdqVMd/la3URdl0fLYuJbJap8IEUkkq",
       "phone": "+91 81052 20000",
       "course": "Canteen Administration",
       "year": "Staff",
@@ -628,7 +628,7 @@
       "tokenNumber": 103,
       "userId": "usr_std_003",
       "studentName": "Karthik Rao",
-      "studentId": "VIM2023BBA077",
+      "studentId": "CAM2023BBA077",
       "items": [
         {
           "_id": "6ab552dc0b7409cb5b5ca0e0",
@@ -668,7 +668,7 @@
       "tokenNumber": 102,
       "userId": "usr_std_002",
       "studentName": "Priya Sharma",
-      "studentId": "VIM2025MCA018",
+      "studentId": "CAM2025MCA018",
       "items": [
         {
           "_id": "6ab552dc0b7409cb5b5ca0e2",
@@ -708,7 +708,7 @@
       "tokenNumber": 101,
       "userId": "usr_std_001",
       "studentName": "Rahul Gowda",
-      "studentId": "VIM2024BCA104",
+      "studentId": "CAM2024BCA104",
       "items": [
         {
           "_id": "6ab552dc0b7409cb5b5ca0e4",

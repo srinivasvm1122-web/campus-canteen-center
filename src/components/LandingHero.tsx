@@ -23,7 +23,7 @@ import {
   Check
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext.tsx';
-import { CampusLogo } from './common/VaisiriLogo.tsx';
+import { CampusLogo } from './common/CampusLogo.tsx';
 
 interface LandingHeroProps {
   initialMode?: 'student' | 'operator' | 'register';

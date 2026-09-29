@@ -22,7 +22,6 @@ export const CampusLogo: React.FC<LogoProps> = ({
   const currentSize = sizeMap[size];
 
   // Universal Modern Smart Campus Canteen Emblem
-  // Features: Cloche food cover, chef/dining fork-spoon, and lightning speed indicator
   const svgLogo = (
     <svg
       viewBox="0 0 100 100"
@@ -48,7 +47,7 @@ export const CampusLogo: React.FC<LogoProps> = ({
       {/* Inner subtle glow */}
       <rect x="8" y="8" width="84" height="84" rx="22" stroke="white" strokeOpacity="0.25" strokeWidth="2" />
 
-      {/* Cloche dome (Food platter lid) */}
+      {/* Cloche dome */}
       <path
         d="M24 62 C24 40, 76 40, 76 62 Z"
         fill="white"
@@ -82,6 +81,3 @@ export const CampusLogo: React.FC<LogoProps> = ({
     </div>
   );
 };
-
-// Export alias for seamless backward compatibility
-export const VaisiriLogo = CampusLogo;

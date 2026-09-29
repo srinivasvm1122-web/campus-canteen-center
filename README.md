@@ -1,6 +1,5 @@
-# 🍱 VIMTECH CANTEEN CENTER
+# 🍱 ONLINE CANTEEN CENTER
 ### Smart Campus Food Ordering, Queue Management & Delivery System
-> **Vaisiri Institute of Management and Technology (VIMTECH)**  
 > *"Order Smart. Skip the Queue. Zero Food Waste."*
 
 [![React 19](https://img.shields.io/badge/React-19.0-61DAFB?logo=react&logoColor=black)](https://react.dev/)
@@ -14,9 +13,9 @@
 
 ## 📌 Project Overview
 
-**VIMTECH Canteen Center** is a full-stack campus food-tech platform engineered to eliminate rush-hour canteen queues, streamline multi-branch cafeteria operations, manage kitchen prep times, and offer students pre-scheduled time-slot pickup and hostel room delivery.
+**Online Canteen Center** is a full-stack campus food-tech platform engineered to eliminate rush-hour canteen queues, streamline multi-branch cafeteria operations, manage kitchen prep times, and offer students pre-scheduled time-slot pickup and hostel room delivery.
 
-Built for **Vaisiri Institute of Management and Technology (VIMTECH)**, this system operates with 6 distinct user roles, real-time order tracking, UPI QR Code Scan & Pay, and an intelligent food surplus & waste reduction engine.
+Built for modern college campuses, this system operates with 6 distinct user roles, real-time order tracking, UPI QR Code Scan & Pay, and an intelligent food surplus & waste reduction engine.
 
 ---
 
@@ -106,13 +105,13 @@ For quick evaluation, click the demo buttons on the login screen or use these cr
 
 | Role | Email | Password | Assigned Area / Details |
 | :--- | :--- | :--- | :--- |
-| 🎓 **Degree Student** | `rahul@vimtech.edu` | `student123` | BCA 3rd Year (Lunch: 1:00–1:30 PM) |
-| 🎓 **Master's Student** | `priya@vimtech.edu` | `student123` | MCA 1st Year (Lunch: 1:30–2:00 PM) |
-| 👨‍🍳 **Canteen Operator** | `operator@vimtech.edu` | `admin123` | Main Canteen Counter |
-| 🍳 **Kitchen Staff** | `kitchen@vimtech.edu` | `kitchen123` | Central Cooking Section |
-| 🛵 **Delivery Agent** | `delivery@vimtech.edu` | `delivery123` | Campus & Hostel Delivery Fleet |
-| 🏢 **Branch Manager** | `branch@vimtech.edu` | `branch123` | Block B & Hostel Canteens |
-| 🛡️ **Super Admin** | `admin@vimtech.edu` | `admin123` | Campus Food Directorate |
+| 🎓 **Degree Student** | `rahul@campus.edu` | `student123` | BCA 3rd Year (Lunch: 1:00–1:30 PM) |
+| 🎓 **Master's Student** | `priya@campus.edu` | `student123` | MCA 1st Year (Lunch: 1:30–2:00 PM) |
+| 👨‍🍳 **Canteen Operator** | `operator@campus.edu` | `admin123` | Main Canteen Counter |
+| 🍳 **Kitchen Staff** | `kitchen@campus.edu` | `kitchen123` | Central Cooking Section |
+| 🛵 **Delivery Agent** | `delivery@campus.edu` | `delivery123` | Campus & Hostel Delivery Fleet |
+| 🏢 **Branch Manager** | `branch@campus.edu` | `branch123` | Block B & Hostel Canteens |
+| 🛡️ **Super Admin** | `admin@campus.edu` | `admin123` | Campus Food Directorate |
 
 ---
 
@@ -141,13 +140,13 @@ cp .env.example .env
 Default `.env` configuration:
 ```env
 PORT=3000
-JWT_SECRET=vimtech_canteen_jwt_secret_dev_key_2026
-SUPABASE_URL="https://qnfoycxcalvdczhtgpxj.supabase.co"
+JWT_SECRET=campus_canteen_jwt_secret_dev_key_2026
+SUPABASE_URL="https://your-project.supabase.co"
 SUPABASE_ANON_KEY="your_supabase_anon_key"
 SUPABASE_SERVICE_ROLE_KEY="your_supabase_service_role_key"
-DATABASE_URL="postgres://postgres:password@db.qnfoycxcalvdczhtgpxj.supabase.co:5432/postgres"
+DATABASE_URL="postgres://postgres:password@db.your-project.supabase.co:5432/postgres"
 ```
-*(Note: If Supabase keys are not set, the built-in local JSON database automatically activates, ensuring 100% offline functionality without external configuration!)*
+*(Note: If Supabase keys are not configured, the built-in local JSON database automatically activates, ensuring 100% offline functionality without external configuration!)*
 
 ### 4. Start Development Server
 ```bash
@@ -168,7 +167,7 @@ npm start
 To see the real-time queue in action:
 
 1. **Tab 1 (Student View):**
-   - Log in as **Rahul** (`rahul@vimtech.edu` / `student123`).
+   - Log in as **Rahul** (`rahul@campus.edu` / `student123`).
    - Add **Masala Dosa (₹50)** and **Cold Coffee (₹40)** to your cart.
    - Choose pickup slot `1:10 PM – 1:20 PM`.
    - Select **Online Payment**, review the UPI QR, and click **Place Order**.
@@ -176,7 +175,7 @@ To see the real-time queue in action:
 
 2. **Tab 2 (Operator View):**
    - Open an incognito tab or second browser window.
-   - Log in as **Operator** (`operator@vimtech.edu` / `admin123`).
+   - Log in as **Operator** (`operator@campus.edu` / `admin123`).
    - Order **#105** appears instantly on the Live Orders board.
    - Click **PREPARING** $\to$ Student's Tab 1 changes to *PREPARING*.
    - Click **READY** $\to$ Student's Tab 1 rings an audio chime and triggers celebration confetti!
@@ -215,7 +214,6 @@ To see the real-time queue in action:
 ## 👨‍💻 Author & Credits
 
 - **Developer:** Srinivas V. M.
-- **Institution:** Vaisiri Institute of Management and Technology (VIMTECH)
 - **Email:** srinivasvm1122@gmail.com
 
 ---

@@ -349,7 +349,7 @@ async function seedDefaultData() {
   }
 
   // Default demo operator
-  const existingOperator = store.users.find(u => u.email === 'operator@campus.edu' || u.email === 'operator@vimtech.edu');
+  const existingOperator = store.users.find(u => u.email === 'operator@campus.edu');
   if (!existingOperator) {
     const operatorUser: IUser = {
       _id: 'usr_op_001',
@@ -447,7 +447,7 @@ async function seedDefaultData() {
   }
 
   // Student 1 (Degree)
-  const existingStudent = store.users.find(u => u.email === 'rahul@campus.edu' || u.email === 'rahul@vimtech.edu');
+  const existingStudent = store.users.find(u => u.email === 'rahul@campus.edu');
   if (!existingStudent) {
     const studentUser: IUser = {
       _id: 'usr_std_001',
@@ -472,7 +472,7 @@ async function seedDefaultData() {
   }
 
   // Student 2 (Master's)
-  const existingMastersStudent = store.users.find(u => u.email === 'priya@campus.edu' || u.email === 'priya@vimtech.edu');
+  const existingMastersStudent = store.users.find(u => u.email === 'priya@campus.edu');
   if (!existingMastersStudent) {
     const mastersUser: IUser = {
       _id: 'usr_std_002',

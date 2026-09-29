@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 import { DB } from '../db.ts';
 import { IUser } from '../models.ts';
 
-const JWT_SECRET = process.env.JWT_SECRET || 'vimtech_canteen_jwt_secret_dev_key_2026';
+const JWT_SECRET = process.env.JWT_SECRET || 'campus_canteen_jwt_secret_dev_key_2026';
 
 export interface AuthRequest extends Request {
   user?: IUser;

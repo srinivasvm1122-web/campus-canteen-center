@@ -1,4 +1,4 @@
-// Verified high quality food image mapping for VIMTECH Canteen items
+// Verified high quality food image mapping for Campus Canteen items
 
 export const FOOD_IMAGE_MAP: Record<string, string> = {
   'Masala Dosa': '/images/masala_dosa.jpg',

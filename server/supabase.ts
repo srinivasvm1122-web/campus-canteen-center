@@ -9,7 +9,7 @@ const { Pool } = pg;
 
 const SUPABASE_URL = process.env.SUPABASE_URL || 'https://qnfoycxcalvdczhtgpxj.supabase.co';
 const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_ANON_KEY || '';
-const DATABASE_URL = process.env.DATABASE_URL || 'postgres://postgres:VIMTECH%401982@db.qnfoycxcalvdczhtgpxj.supabase.co:5432/postgres';
+const DATABASE_URL = process.env.DATABASE_URL || '';
 
 export let supabaseClient: SupabaseClient | null = null;
 let isSupabaseReady = false;

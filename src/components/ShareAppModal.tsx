@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Share2, Copy, Check, X, Send, Sparkles } from 'lucide-react';
-import { CampusLogo } from './common/VaisiriLogo.tsx';
+import { CampusLogo } from './common/CampusLogo.tsx';
 
 interface ShareAppModalProps {
   isOpen: boolean;
