@@ -213,7 +213,7 @@ To see the real-time queue in action:
 
 ## 👨‍💻 Author & Credits
 
-- **Developer:** Srinivas V. M.
+- **Developer:** Srinivas V. M
 - **GitHub:** [@srinivasvm1122-web](https://github.com/srinivasvm1122-web)
 - **Email:** srinivasvm1122@gmail.com
 
