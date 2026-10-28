@@ -9,13 +9,20 @@ const { Pool } = pg;
 
 const SUPABASE_URL = process.env.SUPABASE_URL || 'https://qnfoycxcalvdczhtgpxj.supabase.co';
 const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_ANON_KEY || '';
-const DATABASE_URL = process.env.DATABASE_URL || '';
 
-export let supabaseClient: SupabaseClient | null = null;
+// Primary verified PostgreSQL connection for Supabase (uses IPv4 session pooler for maximum cloud compatibility)
+const DEFAULT_PG_URL = 'postgres://postgres.qnfoycxcalvdczhtgpxj:VIMTECH%401982@aws-0-ap-south-1.pooler.supabase.com:5432/postgres';
+const DATABASE_URL = process.env.DATABASE_URL || DEFAULT_PG_URL;
+
+export let supabaseClient: any = null;
 let isSupabaseReady = false;
 let pool: pg.Pool | null = null;
 
-export function getSupabaseClient(): SupabaseClient | null {
+export function getSupabasePool(): pg.Pool | null {
+  return pool;
+}
+
+export function getSupabaseClient(): any {
   return supabaseClient;
 }
 
@@ -23,244 +30,355 @@ export function isSupabaseConnected(): boolean {
   return isSupabaseReady;
 }
 
-export async function initSupabase(): Promise<boolean> {
-  try {
-    if (!SUPABASE_URL || !SUPABASE_KEY) {
-      console.warn('⚠️ Supabase credentials missing.');
-      return false;
-    }
+// PostgreSQL Query Builder implementing the Supabase .from() interface
+class PostgresQueryBuilder {
+  private table: string;
+  private conditions: { col: string; val: any }[] = [];
+  private orderBy: string | null = null;
+  private limitCount: number | null = null;
+  private cols: string = '*';
 
-    console.log(`🔌 Initializing Supabase client (${SUPABASE_URL})...`);
-    supabaseClient = createClient(SUPABASE_URL, SUPABASE_KEY, {
-      auth: {
-        persistSession: false,
-        autoRefreshToken: false,
-      },
-    });
+  constructor(table: string) {
+    this.table = table;
+  }
 
-    // Try connecting via pg pool to verify database and ensure tables exist
+  select(cols: string = '*') {
+    this.cols = cols;
+    return this;
+  }
+
+  eq(col: string, val: any) {
+    this.conditions.push({ col, val });
+    return this;
+  }
+
+  order(col: string, { ascending = true }: { ascending?: boolean } = {}) {
+    this.orderBy = `${col} ${ascending ? 'ASC' : 'DESC'}`;
+    return this;
+  }
+
+  limit(n: number) {
+    this.limitCount = n;
+    return this;
+  }
+
+  async maybeSingle(): Promise<{ data: any | null; error: any | null }> {
+    this.limitCount = 1;
+    const res = await this.execute();
+    return {
+      data: res.data && res.data[0] ? res.data[0] : null,
+      error: res.error,
+    };
+  }
+
+  async execute(): Promise<{ data: any[] | null; error: any | null }> {
+    if (!pool) return { data: null, error: new Error('Postgres pool not initialized') };
     try {
-      pool = new Pool({
-        connectionString: DATABASE_URL,
-        ssl: { rejectUnauthorized: false },
-        connectionTimeoutMillis: 8000,
+      let sql = `SELECT ${this.cols} FROM public.${this.table}`;
+      const params: any[] = [];
+      if (this.conditions.length > 0) {
+        sql += ' WHERE ' + this.conditions.map((c, i) => {
+          params.push(c.val);
+          return `${c.col} = $${i + 1}`;
+        }).join(' AND ');
+      }
+      if (this.orderBy) sql += ` ORDER BY ${this.orderBy}`;
+      if (this.limitCount) sql += ` LIMIT ${this.limitCount}`;
+
+      const res = await pool.query(sql, params);
+      return { data: res.rows, error: null };
+    } catch (err) {
+      console.error(`Postgres SELECT error on ${this.table}:`, err);
+      return { data: null, error: err };
+    }
+  }
+
+  then(resolve: (value: any) => any, reject?: (reason: any) => any) {
+    return this.execute().then(resolve, reject);
+  }
+
+  async insert(rows: any | any[]): Promise<{ data: any[] | null; error: any | null }> {
+    if (!pool) return { data: null, error: new Error('Postgres pool not initialized') };
+    try {
+      const arr = Array.isArray(rows) ? rows : [rows];
+      if (arr.length === 0) return { data: [], error: null };
+      const resData: any[] = [];
+
+      for (const row of arr) {
+        const keys = Object.keys(row);
+        const cols = keys.join(', ');
+        const placeholders = keys.map((_, i) => `$${i + 1}`).join(', ');
+        const values = keys.map(k => {
+          const v = row[k];
+          return (typeof v === 'object' && v !== null && !(v instanceof Date))
+            ? JSON.stringify(v)
+            : v;
+        });
+
+        const sql = `INSERT INTO public.${this.table} (${cols}) VALUES (${placeholders}) ON CONFLICT DO NOTHING RETURNING *`;
+        const res = await pool.query(sql, values);
+        if (res.rows[0]) resData.push(res.rows[0]);
+      }
+      return { data: resData, error: null };
+    } catch (err) {
+      console.error(`Postgres INSERT error on ${this.table}:`, err);
+      return { data: null, error: err };
+    }
+  }
+
+  async upsert(row: any, { onConflict = 'id' }: { onConflict?: string } = {}): Promise<{ data: any | null; error: any | null }> {
+    if (!pool) return { data: null, error: new Error('Postgres pool not initialized') };
+    try {
+      const keys = Object.keys(row);
+      const cols = keys.join(', ');
+      const placeholders = keys.map((_, i) => `$${i + 1}`).join(', ');
+      const updateSets = keys.filter(k => k !== onConflict).map(k => `${k} = EXCLUDED.${k}`).join(', ');
+      const values = keys.map(k => {
+        const v = row[k];
+        return (typeof v === 'object' && v !== null && !(v instanceof Date))
+          ? JSON.stringify(v)
+          : v;
       });
 
-      const pgClient = await pool.connect();
-      console.log('🌟 Connected to Supabase PostgreSQL database directly!');
-
-      // Ensure required schema tables exist
-      await pgClient.query(`
-        CREATE TABLE IF NOT EXISTS public.users (
-          id TEXT PRIMARY KEY,
-          name TEXT NOT NULL,
-          student_id TEXT,
-          email TEXT UNIQUE NOT NULL,
-          password TEXT NOT NULL,
-          phone TEXT,
-          course TEXT,
-          year TEXT,
-          student_type TEXT DEFAULT 'Degree',
-          role TEXT NOT NULL DEFAULT 'student',
-          academic_category TEXT,
-          department TEXT,
-          semester TEXT,
-          section TEXT,
-          hostel_building TEXT,
-          room_number TEXT,
-          branch_id TEXT,
-          created_at TIMESTAMPTZ DEFAULT NOW()
-        );
-
-        CREATE TABLE IF NOT EXISTS public.menu_items (
-          id TEXT PRIMARY KEY,
-          name TEXT NOT NULL,
-          description TEXT,
-          price NUMERIC NOT NULL,
-          image TEXT,
-          category TEXT DEFAULT 'Meals',
-          available BOOLEAN DEFAULT TRUE,
-          is_today_special BOOLEAN DEFAULT FALSE,
-          date TEXT,
-          stock_quantity INTEGER DEFAULT 50,
-          preparation_time_minutes INTEGER DEFAULT 10,
-          is_veg BOOLEAN DEFAULT TRUE,
-          branch_availability JSONB DEFAULT '["Main Canteen", "Hostel Canteen", "Block B Canteen"]'::jsonb,
-          ingredients TEXT,
-          allergy_info TEXT,
-          created_at TIMESTAMPTZ DEFAULT NOW()
-        );
-
-        CREATE TABLE IF NOT EXISTS public.orders (
-          id TEXT PRIMARY KEY,
-          order_id TEXT UNIQUE NOT NULL,
-          token_number INTEGER NOT NULL,
-          user_id TEXT NOT NULL,
-          student_name TEXT NOT NULL,
-          student_id TEXT,
-          items JSONB NOT NULL DEFAULT '[]'::jsonb,
-          total_amount NUMERIC NOT NULL,
-          food_amount NUMERIC,
-          delivery_fee NUMERIC DEFAULT 0,
-          discount_amount NUMERIC DEFAULT 0,
-          coupon_code TEXT,
-          order_type TEXT DEFAULT 'PICKUP',
-          pickup_slot TEXT,
-          delivery_location JSONB,
-          branch TEXT DEFAULT 'Main Canteen',
-          payment_method TEXT NOT NULL,
-          payment_status TEXT NOT NULL DEFAULT 'PENDING',
-          order_status TEXT NOT NULL DEFAULT 'CONFIRMED',
-          delivery_status TEXT DEFAULT 'PENDING',
-          special_instructions TEXT,
-          transaction_id TEXT,
-          notes TEXT,
-          rating JSONB,
-          reported_issue JSONB,
-          created_at TIMESTAMPTZ DEFAULT NOW(),
-          updated_at TIMESTAMPTZ DEFAULT NOW()
-        );
-
-        CREATE TABLE IF NOT EXISTS public.transfers (
-          id TEXT PRIMARY KEY,
-          item_id TEXT NOT NULL,
-          item_name TEXT NOT NULL,
-          quantity INTEGER NOT NULL,
-          from_branch TEXT NOT NULL,
-          to_branch TEXT NOT NULL,
-          status TEXT NOT NULL DEFAULT 'REQUESTED',
-          requested_by TEXT NOT NULL,
-          approved_by TEXT,
-          created_at TIMESTAMPTZ DEFAULT NOW(),
-          updated_at TIMESTAMPTZ DEFAULT NOW()
-        );
-
-        CREATE TABLE IF NOT EXISTS public.coupons (
-          code TEXT PRIMARY KEY,
-          description TEXT NOT NULL,
-          discount_percent NUMERIC,
-          discount_amount NUMERIC,
-          min_order_amount NUMERIC DEFAULT 0,
-          target_course TEXT DEFAULT 'All',
-          active BOOLEAN DEFAULT TRUE
-        );
-
-        CREATE TABLE IF NOT EXISTS public.waste_records (
-          id TEXT PRIMARY KEY,
-          date TEXT NOT NULL,
-          branch TEXT NOT NULL,
-          item_id TEXT NOT NULL,
-          item_name TEXT NOT NULL,
-          prepared_qty INTEGER NOT NULL DEFAULT 0,
-          sold_qty INTEGER NOT NULL DEFAULT 0,
-          remaining_qty INTEGER NOT NULL DEFAULT 0,
-          wasted_qty INTEGER NOT NULL DEFAULT 0,
-          reason TEXT,
-          created_at TIMESTAMPTZ DEFAULT NOW()
-        );
-
-        CREATE TABLE IF NOT EXISTS public.audit_logs (
-          id TEXT PRIMARY KEY,
-          user_name TEXT NOT NULL,
-          role TEXT NOT NULL,
-          action TEXT NOT NULL,
-          target TEXT NOT NULL,
-          metadata JSONB,
-          timestamp TIMESTAMPTZ DEFAULT NOW()
-        );
-
-        CREATE TABLE IF NOT EXISTS public.courses (
-          id TEXT PRIMARY KEY,
-          code TEXT NOT NULL,
-          name TEXT NOT NULL,
-          type TEXT NOT NULL,
-          department TEXT NOT NULL
-        );
-
-        CREATE TABLE IF NOT EXISTS public.branches (
-          id TEXT PRIMARY KEY,
-          name TEXT NOT NULL,
-          location TEXT NOT NULL,
-          is_open BOOLEAN DEFAULT TRUE,
-          current_wait_time_minutes INTEGER DEFAULT 8
-        );
-
-        CREATE TABLE IF NOT EXISTS public.payments (
-          id TEXT PRIMARY KEY,
-          order_id TEXT NOT NULL,
-          amount NUMERIC NOT NULL,
-          method TEXT NOT NULL,
-          status TEXT NOT NULL,
-          transaction_id TEXT NOT NULL,
-          created_at TIMESTAMPTZ DEFAULT NOW()
-        );
-
-        CREATE TABLE IF NOT EXISTS public.notifications (
-          id TEXT PRIMARY KEY,
-          user_id TEXT NOT NULL,
-          order_id TEXT,
-          message TEXT NOT NULL,
-          type TEXT NOT NULL,
-          read BOOLEAN DEFAULT FALSE,
-          created_at TIMESTAMPTZ DEFAULT NOW()
-        );
-
-        CREATE TABLE IF NOT EXISTS public.counters (
-          name TEXT PRIMARY KEY,
-          val INTEGER NOT NULL DEFAULT 100
-        );
-
-        -- Safe column additions if tables already existed
-        ALTER TABLE public.orders ADD COLUMN IF NOT EXISTS order_type TEXT DEFAULT 'PICKUP';
-        ALTER TABLE public.orders ADD COLUMN IF NOT EXISTS delivery_location JSONB;
-        ALTER TABLE public.orders ADD COLUMN IF NOT EXISTS branch TEXT DEFAULT 'Main Canteen';
-        ALTER TABLE public.orders ADD COLUMN IF NOT EXISTS delivery_status TEXT DEFAULT 'PENDING';
-        ALTER TABLE public.orders ADD COLUMN IF NOT EXISTS discount_amount NUMERIC DEFAULT 0;
-        ALTER TABLE public.orders ADD COLUMN IF NOT EXISTS food_amount NUMERIC;
-        ALTER TABLE public.orders ADD COLUMN IF NOT EXISTS delivery_fee NUMERIC DEFAULT 0;
-        ALTER TABLE public.orders ADD COLUMN IF NOT EXISTS coupon_code TEXT;
-        ALTER TABLE public.orders ADD COLUMN IF NOT EXISTS special_instructions TEXT;
-        ALTER TABLE public.orders ADD COLUMN IF NOT EXISTS rating JSONB;
-        ALTER TABLE public.orders ADD COLUMN IF NOT EXISTS reported_issue JSONB;
-
-        ALTER TABLE public.users ADD COLUMN IF NOT EXISTS academic_category TEXT;
-        ALTER TABLE public.users ADD COLUMN IF NOT EXISTS department TEXT;
-        ALTER TABLE public.users ADD COLUMN IF NOT EXISTS semester TEXT;
-        ALTER TABLE public.users ADD COLUMN IF NOT EXISTS section TEXT;
-        ALTER TABLE public.users ADD COLUMN IF NOT EXISTS hostel_building TEXT;
-        ALTER TABLE public.users ADD COLUMN IF NOT EXISTS room_number TEXT;
-        ALTER TABLE public.users ADD COLUMN IF NOT EXISTS branch_id TEXT;
-
-        ALTER TABLE public.menu_items ADD COLUMN IF NOT EXISTS stock_quantity INTEGER DEFAULT 50;
-        ALTER TABLE public.menu_items ADD COLUMN IF NOT EXISTS preparation_time_minutes INTEGER DEFAULT 10;
-        ALTER TABLE public.menu_items ADD COLUMN IF NOT EXISTS is_veg BOOLEAN DEFAULT TRUE;
-        ALTER TABLE public.menu_items ADD COLUMN IF NOT EXISTS branch_availability JSONB DEFAULT '["Main Canteen", "Hostel Canteen", "Block B Canteen"]'::jsonb;
-        ALTER TABLE public.menu_items ADD COLUMN IF NOT EXISTS ingredients TEXT;
-        ALTER TABLE public.menu_items ADD COLUMN IF NOT EXISTS allergy_info TEXT;
-
-        GRANT ALL ON ALL TABLES IN SCHEMA public TO postgres, anon, authenticated, service_role;
-      `);
-
-      pgClient.release();
-      isSupabaseReady = true;
-      console.log('✅ Supabase tables verified and ready!');
-      return true;
-    } catch (pgErr: any) {
-      console.warn('Postgres direct pool warning:', pgErr.message);
-      // Fallback: test via supabase REST client
-      const { data, error } = await supabaseClient.from('menu_items').select('id').limit(1);
-      if (!error) {
-        isSupabaseReady = true;
-        console.log('✅ Supabase REST Client connected successfully!');
-        return true;
-      } else {
-        console.warn('Supabase REST test error:', error.message);
-      }
+      const sql = `INSERT INTO public.${this.table} (${cols}) VALUES (${placeholders}) ON CONFLICT (${onConflict}) DO UPDATE SET ${updateSets} RETURNING *`;
+      const res = await pool.query(sql, values);
+      return { data: res.rows[0] || null, error: null };
+    } catch (err) {
+      console.error(`Postgres UPSERT error on ${this.table}:`, err);
+      return { data: null, error: err };
     }
+  }
 
-    return isSupabaseReady;
+  update(patch: any) {
+    return {
+      eq: async (col: string, val: any): Promise<{ data: any[] | null; error: any | null }> => {
+        if (!pool) return { data: null, error: new Error('Postgres pool not initialized') };
+        try {
+          const keys = Object.keys(patch);
+          const sets = keys.map((k, i) => `${k} = $${i + 1}`).join(', ');
+          const values = keys.map(k => {
+            const v = patch[k];
+            return (typeof v === 'object' && v !== null && !(v instanceof Date))
+              ? JSON.stringify(v)
+              : v;
+          });
+          values.push(val);
+          const sql = `UPDATE public.${this.table} SET ${sets} WHERE ${col} = $${values.length} RETURNING *`;
+          const res = await pool.query(sql, values);
+          return { data: res.rows, error: null };
+        } catch (err) {
+          console.error(`Postgres UPDATE error on ${this.table}:`, err);
+          return { data: null, error: err };
+        }
+      }
+    };
+  }
+
+  delete() {
+    return {
+      eq: async (col: string, val: any): Promise<{ data: any[] | null; error: any | null }> => {
+        if (!pool) return { data: null, error: new Error('Postgres pool not initialized') };
+        try {
+          const sql = `DELETE FROM public.${this.table} WHERE ${col} = $1 RETURNING *`;
+          const res = await pool.query(sql, [val]);
+          return { data: res.rows, error: null };
+        } catch (err) {
+          console.error(`Postgres DELETE error on ${this.table}:`, err);
+          return { data: null, error: err };
+        }
+      }
+    };
+  }
+}
+
+export async function initSupabase(): Promise<boolean> {
+  try {
+    console.log(`🔌 Initializing Supabase PostgreSQL connection (${DATABASE_URL.split('@')[1] || 'cloud'})...`);
+
+    pool = new Pool({
+      connectionString: DATABASE_URL,
+      ssl: { rejectUnauthorized: false },
+      connectionTimeoutMillis: 10000,
+    });
+
+    const pgClient = await pool.connect();
+    console.log('🌟 Connected to Supabase PostgreSQL database successfully!');
+
+    // Ensure required schema tables exist
+    await pgClient.query(`
+      CREATE TABLE IF NOT EXISTS public.users (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        student_id TEXT,
+        email TEXT UNIQUE NOT NULL,
+        password TEXT NOT NULL,
+        phone TEXT,
+        course TEXT,
+        year TEXT,
+        student_type TEXT DEFAULT 'Degree',
+        role TEXT NOT NULL DEFAULT 'student',
+        academic_category TEXT,
+        department TEXT,
+        semester TEXT,
+        section TEXT,
+        hostel_building TEXT,
+        room_number TEXT,
+        branch_id TEXT,
+        created_at TIMESTAMPTZ DEFAULT NOW()
+      );
+
+      CREATE TABLE IF NOT EXISTS public.menu_items (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        description TEXT,
+        price NUMERIC NOT NULL,
+        image TEXT,
+        category TEXT DEFAULT 'Meals',
+        available BOOLEAN DEFAULT TRUE,
+        is_today_special BOOLEAN DEFAULT FALSE,
+        date TEXT,
+        stock_quantity INTEGER DEFAULT 50,
+        preparation_time_minutes INTEGER DEFAULT 10,
+        is_veg BOOLEAN DEFAULT TRUE,
+        branch_availability JSONB DEFAULT '["Main Canteen", "Hostel Canteen", "Block B Canteen"]'::jsonb,
+        ingredients TEXT,
+        allergy_info TEXT,
+        created_at TIMESTAMPTZ DEFAULT NOW()
+      );
+
+      CREATE TABLE IF NOT EXISTS public.orders (
+        id TEXT PRIMARY KEY,
+        order_id TEXT UNIQUE NOT NULL,
+        token_number INTEGER NOT NULL,
+        user_id TEXT NOT NULL,
+        student_name TEXT NOT NULL,
+        student_id TEXT,
+        items JSONB NOT NULL DEFAULT '[]'::jsonb,
+        total_amount NUMERIC NOT NULL,
+        food_amount NUMERIC,
+        delivery_fee NUMERIC DEFAULT 0,
+        discount_amount NUMERIC DEFAULT 0,
+        coupon_code TEXT,
+        order_type TEXT DEFAULT 'PICKUP',
+        pickup_slot TEXT,
+        delivery_location JSONB,
+        branch TEXT DEFAULT 'Main Canteen',
+        payment_method TEXT NOT NULL,
+        payment_status TEXT NOT NULL DEFAULT 'PENDING',
+        order_status TEXT NOT NULL DEFAULT 'CONFIRMED',
+        delivery_status TEXT DEFAULT 'PENDING',
+        special_instructions TEXT,
+        transaction_id TEXT,
+        notes TEXT,
+        rating JSONB,
+        reported_issue JSONB,
+        created_at TIMESTAMPTZ DEFAULT NOW(),
+        updated_at TIMESTAMPTZ DEFAULT NOW()
+      );
+
+      CREATE TABLE IF NOT EXISTS public.transfers (
+        id TEXT PRIMARY KEY,
+        item_id TEXT NOT NULL,
+        item_name TEXT NOT NULL,
+        quantity INTEGER NOT NULL,
+        from_branch TEXT NOT NULL,
+        to_branch TEXT NOT NULL,
+        status TEXT NOT NULL DEFAULT 'REQUESTED',
+        requested_by TEXT NOT NULL,
+        approved_by TEXT,
+        created_at TIMESTAMPTZ DEFAULT NOW(),
+        updated_at TIMESTAMPTZ DEFAULT NOW()
+      );
+
+      CREATE TABLE IF NOT EXISTS public.coupons (
+        code TEXT PRIMARY KEY,
+        description TEXT NOT NULL,
+        discount_percent NUMERIC,
+        discount_amount NUMERIC,
+        min_order_amount NUMERIC DEFAULT 0,
+        target_course TEXT DEFAULT 'All',
+        active BOOLEAN DEFAULT TRUE
+      );
+
+      CREATE TABLE IF NOT EXISTS public.waste_records (
+        id TEXT PRIMARY KEY,
+        date TEXT NOT NULL,
+        branch TEXT NOT NULL,
+        item_id TEXT NOT NULL,
+        item_name TEXT NOT NULL,
+        prepared_qty INTEGER NOT NULL DEFAULT 0,
+        sold_qty INTEGER NOT NULL DEFAULT 0,
+        remaining_qty INTEGER NOT NULL DEFAULT 0,
+        wasted_qty INTEGER NOT NULL DEFAULT 0,
+        reason TEXT,
+        created_at TIMESTAMPTZ DEFAULT NOW()
+      );
+
+      CREATE TABLE IF NOT EXISTS public.audit_logs (
+        id TEXT PRIMARY KEY,
+        user_name TEXT NOT NULL,
+        role TEXT NOT NULL,
+        action TEXT NOT NULL,
+        target TEXT NOT NULL,
+        metadata JSONB,
+        timestamp TIMESTAMPTZ DEFAULT NOW()
+      );
+
+      CREATE TABLE IF NOT EXISTS public.courses (
+        id TEXT PRIMARY KEY,
+        code TEXT NOT NULL,
+        name TEXT NOT NULL,
+        type TEXT NOT NULL,
+        department TEXT NOT NULL
+      );
+
+      CREATE TABLE IF NOT EXISTS public.branches (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        location TEXT NOT NULL,
+        is_open BOOLEAN DEFAULT TRUE,
+        current_wait_time_minutes INTEGER DEFAULT 8
+      );
+
+      CREATE TABLE IF NOT EXISTS public.payments (
+        id TEXT PRIMARY KEY,
+        order_id TEXT NOT NULL,
+        amount NUMERIC NOT NULL,
+        method TEXT NOT NULL,
+        status TEXT NOT NULL,
+        transaction_id TEXT NOT NULL,
+        created_at TIMESTAMPTZ DEFAULT NOW()
+      );
+
+      CREATE TABLE IF NOT EXISTS public.notifications (
+        id TEXT PRIMARY KEY,
+        user_id TEXT NOT NULL,
+        order_id TEXT,
+        message TEXT NOT NULL,
+        type TEXT NOT NULL,
+        read BOOLEAN DEFAULT FALSE,
+        created_at TIMESTAMPTZ DEFAULT NOW()
+      );
+
+      CREATE TABLE IF NOT EXISTS public.counters (
+        name TEXT PRIMARY KEY,
+        val INTEGER NOT NULL DEFAULT 100
+      );
+    `);
+
+    pgClient.release();
+    isSupabaseReady = true;
+
+    // Use PostgresQueryBuilder for seamless, direct DB operations
+    supabaseClient = {
+      from: (table: string) => new PostgresQueryBuilder(table),
+    };
+
+    console.log('✅ Supabase PostgreSQL tables verified and Live!');
+    return true;
   } catch (err: any) {
-    console.error('Failed to initialize Supabase:', err);
+    console.error('Failed to initialize Supabase PostgreSQL:', err.message);
+    isSupabaseReady = false;
     return false;
   }
 }

@@ -1036,10 +1036,10 @@ export const DB = {
 
           const { data, error } = await query;
           if (data && !error) {
-            let res = data.map(mapOrderFromDb);
+            let res: IOrder[] = data.map(mapOrderFromDb);
             if (filter?.search) {
               const q = filter.search.toLowerCase().trim();
-              res = res.filter(o =>
+              res = res.filter((o: IOrder) =>
                 o.orderId.toLowerCase().includes(q) ||
                 String(o.tokenNumber).includes(q) ||
                 o.studentName.toLowerCase().includes(q) ||
